@@ -48,10 +48,15 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "files.exclude": {
+        "**/__pycache__": true,
         "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.idea": true,
+        "**/.next": true,
         "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
+        "**/.pytest_cache": true,
+        "**/.sass-cache": true,
+        "**/.settings": true
     },
     "sonarlint.rules": {
         "java:S106": {
@@ -79,5 +84,6 @@
     ],
     "[typescriptreact]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
-    }
+    },
+    "editor.formatOnSave": true
 }

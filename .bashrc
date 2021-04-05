@@ -9,6 +9,8 @@ fi
 #            #
 ##############
 
+dus() { du -sh $1/* | sort -hr | xargs -0 echo | sed -r 's/\S*\// /g'; }
+
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -f ~/.bash_private_aliases.bash ] && . ~/.bash_private_aliases.bash
 [ -f ~/.bash_completion ] && . ~/.bash_completion
@@ -34,4 +36,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 # This loads nvm bash_completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Install icon font for lsd
+# git clone https://github.com/ryanoasis/nerd-fonts.git
+# cd nerd_fonts/
+# ./install.sh Hack
 
