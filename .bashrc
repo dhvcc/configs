@@ -38,7 +38,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Install icon font for lsd
-# git clone https://github.com/ryanoasis/nerd-fonts.git
+# git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1
 # cd nerd_fonts/
 # ./install.sh Hack
 

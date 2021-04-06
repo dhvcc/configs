@@ -2,8 +2,9 @@
 ##############
 # Oh-my-zsh #
 if [[ -d $HOME/.oh-my-zsh ]]; then
-  export ZSH="/home/dhvcc/.oh-my-zsh"
-  ZSH_THEME="dhvcc"
+  export ZSH="$HOME/.oh-my-zsh"
+  export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
+  ZSH_THEME="spaceship"
   source $ZSH/oh-my-zsh.sh
 fi
 #            #
@@ -16,8 +17,10 @@ fi
 # FZF
 fzf=$(command -v fzf)
 if [[ -n $fzf ]]; then
-  source /usr/share/fzf/key-bindings.zsh
-  source /usr/share/fzf/completion.zsh
+  source /usr/share/doc/fzf/examples/key-bindings.zsh ||
+    source /usr/share/fzf/key-bindings.zsh
+  source /usr/share/doc/fzf/examples/completion.zsh ||
+    source /usr/share/fzf/completion.zsh
 fi
 
 # Enable pyenv
@@ -31,6 +34,6 @@ fi
 plugins=(git)
 
 # Install icon font for lsd
-# git clone https://github.com/ryanoasis/nerd-fonts.git
+# git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1
 # cd nerd_fonts/
 # ./install.sh Hack

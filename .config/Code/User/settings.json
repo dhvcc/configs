@@ -1,4 +1,5 @@
 {
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "[shellscript]": {
         "editor.defaultFormatter": "foxundermoon.shell-format"
     },
@@ -75,6 +76,9 @@
     "[css]": {
         "editor.defaultFormatter": "sasa.vscode-sass-format"
     },
+    "files.associations": {
+        "*.zsh-theme": "shellscript",
+    },
     "python.languageServer": "Pylance",
     "python.formatting.provider": "black",
     "python.linting.flake8Enabled": true,
@@ -85,5 +89,5 @@
     "[typescriptreact]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
 }
