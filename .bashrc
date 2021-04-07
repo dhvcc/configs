@@ -16,14 +16,16 @@ dus() { du -sh $1/* | sort -hr | xargs -0 echo | sed -r 's/\S*\// /g'; }
 [ -f ~/.bash_completion ] && . ~/.bash_completion
 
 # FZF
-fzf=$(which fzf)
+fzf=$(command -v fzf)
 if [[ -n $fzf ]]; then
-  source /usr/share/doc/fzf/examples/key-bindings.bash
-  source /usr/share/doc/fzf/examples/completion.bash
+  [ -f /usr/share/doc/fzf/examples/key-bindings.bash ] && . /usr/share/doc/fzf/examples/key-bindings.bash ||
+    source /usr/share/fzf/key-bindings.bash
+  [ -f /usr/share/doc/fzf/examples/completion.bash ] && . /usr/share/doc/fzf/examples/completion.bash ||
+    source /usr/share/fzf/completion.bash
 fi
 
 # Enable pyenv
-pyenv=$(which pyenv)
+pyenv=$(command -v pyenv)
 if [[ -n $pyenv ]]; then
   export PYENV_ROOT="$HOME/.pyenv"
   export PATH="$PYENV_ROOT/bin:$PATH"

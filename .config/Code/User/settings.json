@@ -78,6 +78,7 @@
     },
     "files.associations": {
         "*.zsh-theme": "shellscript",
+        ".bash_completion": "shellscript",
     },
     "python.languageServer": "Pylance",
     "python.formatting.provider": "black",

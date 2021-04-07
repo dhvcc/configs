@@ -1,9 +1,9 @@
-gh=$(which gh)
+gh=$(command -v gh)
 if [[ -n $gh ]]; then
   eval "$(gh completion -s bash)"
 fi
 
-aws_completer=$(which aws_completer)
+aws_completer=$(command -v aws_completer)
 if [[ -n $aws_completer ]]; then
   complete -C $(which aws_completer) aws
 fi
