@@ -5,7 +5,7 @@ plugins=(git)
 if [[ -d $HOME/.oh-my-zsh ]]; then
   export ZSH="$HOME/.oh-my-zsh"
   export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
-
+  plugins+=(docker docker-compose)
   ZSH_THEME="spaceship"
   source $ZSH/oh-my-zsh.sh
 
