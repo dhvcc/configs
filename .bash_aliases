@@ -1,1 +1,1 @@
-/home/aliaksei/.config/.aliasrc
+./.config/.aliasrc
