@@ -3,10 +3,10 @@ plugins=(git)
 ##############
 # Oh-my-zsh #
 if [[ -d $HOME/.oh-my-zsh ]]; then
+  plugins+=(docker docker-compose)
+  
   export ZSH="$HOME/.oh-my-zsh"
   export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
-  plugins+=(docker docker-compose)
-  ZSH_THEME="spaceship"
   source $ZSH/oh-my-zsh.sh
 
   [ -d "$ZSH_CUSTOM/plugins/zsh-completions" ] && plugins+=zsh-completions
@@ -16,11 +16,11 @@ fi
 #            #
 ##############
 
-[ -f ~/.config/.aliasrc ] && source ~/.config/.aliasrc
-[ -f ~/.config/.completionrc ] && source ~/.config/.completionrc
+command -v starship > /dev/null && eval "$(starship init zsh)"
+[ -f ~/.config/.aliasrc.sh ] && sourc.she ~/.config/.aliasrc.sh
+[ -f ~/.config/.completionrc.sh ] && sourc.she ~/.config/.completionrc.sh
 
-[ -f ~/.zsh_private_aliases.zsh ] && source ~/.zsh_private_aliases.zsh
-[ -f ~/.spaceship-config.zsh ] && source ~/.spaceship-config.zsh
+[ -f ~/.private_aliases.zsh ] && source ~/.private_aliases.zsh
 
 # FZF key-bindings and completion
 fzf=$(command -v fzf)

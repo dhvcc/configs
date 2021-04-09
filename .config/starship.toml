@@ -1,0 +1,23 @@
+format = """
+┌ $username📁 $directory🌿 $git_branch$git_status$python
+└❯ 
+"""
+
+[username]
+show_always = true
+style_user = "bold red"
+
+[directory]
+style = "bold yellow"
+
+[git_branch]
+allow_show_remote = true
+format = "[$branch]($style) "
+style = "bold green"
+
+[git_status]
+style = "white"
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\))]($style)'
+style = "bold cyan"

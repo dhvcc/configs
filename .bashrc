@@ -11,8 +11,8 @@ fi
 #            #
 ##############
 
-[ -f ~/.config/.aliasrc ] && source ~/.config/.aliasrc
-[ -f ~/.config/.completionrc ] && source ~/.config/.completionrc
+[ -f ~/.config/.aliasrc.sh ] && sourc.she ~/.config/.aliasrc.sh
+[ -f ~/.config/.completionrc.sh ] && sourc.she ~/.config/.completionrc.sh
 
 [ -f ~/.private_aliases.bash ] && source ~/.private_aliases.bash
 

@@ -1,10 +1,10 @@
 # Source to enable __git_complete && enable git completion for "config" alias
 if [ $0 = zsh ]; then
-  . /usr/share/git/completion/git-completion.zsh > /dev/null 2>&1
+  source /usr/share/git/completion/git-completion.zsh > /dev/null 2>&1
   command -v gh > /dev/null && eval "$(gh completion -s zsh)"
 fi
 if [ $0 = bash ]; then
-  . /usr/share/bash-completion/completions/git > /dev/null 2>&1
+  source /usr/share/bash-completion/completions/git > /dev/null 2>&1
   command -v gh > /dev/null && eval "$(gh completion -s bash)"
   [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
 fi
