@@ -4,6 +4,7 @@ plugins=(git)
 # Oh-my-bash #
 if [[ -d $HOME/.oh-my-bash ]]; then
   export OSH=$HOME/.oh-my-bash
+  [ ! -d "$OSH/themes/dhvcc" ] && mkdir $OSH/themes/dhvcc && ln -sf $HOME/.dhvcc.bash-theme $OSH/themes/dhvcc/dhvcc.theme.sh
   OSH_THEME="dhvcc"
   source $OSH/oh-my-bash.sh
 fi
