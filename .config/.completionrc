@@ -1,0 +1,10 @@
+# Source to enable __git_complete && enable git completion for "config" alias
+if [ -f /usr/share/git/completion/git-completion.zsh ]; then
+  . /usr/share/git/completion/git-completion.zsh > /dev/null 2>&1
+fi
+
+command -v __git_complete > /dev/null && __git_complete config __git_main
+
+command -v gh > /dev/null && eval "$(gh completion -s zsh)"
+
+command -v aws_completer > /dev/null && complete -C $(which aws_completer) aws

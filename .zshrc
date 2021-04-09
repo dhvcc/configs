@@ -1,28 +1,35 @@
-# Oh my zsh needs to go first so that we can override it's aliases
+plugins=(git)
+
 ##############
 # Oh-my-zsh #
 if [[ -d $HOME/.oh-my-zsh ]]; then
   export ZSH="$HOME/.oh-my-zsh"
   export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
+
   ZSH_THEME="spaceship"
   source $ZSH/oh-my-zsh.sh
+
+  [ -d "$ZSH_CUSTOM/plugins/zsh-completions" ] && plugins+=zsh-completions
+  [ -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ] && plugins+=zsh-autosuggestions
+  [ -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ] && plugins+=zsh-syntax-highlighting
 fi
 #            #
 ##############
 
-plugins=(git zsh-completions zsh-autosuggestions zsh-syntax-highlighting)
+[ -f ~/.config/.aliasrc ] && source ~/.config/.aliasrc
+[ -f ~/.config/.completionrc ] && source ~/.config/.completionrc
 
-[ -f ~/.zsh_aliases.zsh ] && . ~/.zsh_aliases.zsh
-[ -f ~/.zsh_private_aliases.zsh ] && . ~/.zsh_private_aliases.zsh
-[ -f ~/.zsh_completion.zsh ] && . ~/.zsh_completion.zsh
-[ -f ~/.spaceship-config.zsh ] && . ~/.spaceship-config.zsh
+[ -f ~/.zsh_private_aliases.zsh ] && source ~/.zsh_private_aliases.zsh
+[ -f ~/.spaceship-config.zsh ] && source ~/.spaceship-config.zsh
 
-# FZF
+# FZF key-bindings and completion
 fzf=$(command -v fzf)
 if [[ -n $fzf ]]; then
-  [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && . /usr/share/doc/fzf/examples/key-bindings.zsh ||
+  [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && \
+    source /usr/share/doc/fzf/examples/key-bindings.zsh || \
     source /usr/share/fzf/key-bindings.zsh
-  [ -f /usr/share/doc/fzf/examples/completion.zsh ] && . /usr/share/doc/fzf/examples/completion.zsh ||
+  [ -f /usr/share/doc/fzf/examples/completion.zsh ] && \
+    source /usr/share/doc/fzf/examples/completion.zsh || \
     source /usr/share/fzf/completion.zsh
 fi
 
