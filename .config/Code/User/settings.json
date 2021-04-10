@@ -5,7 +5,7 @@
     },
     "python.defaultInterpreterPath": "/usr/bin/python3",
     "workbench.tree.indent": 20,
-    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.iconTheme": "material-icon-theme",
     "window.titleBarStyle": "custom",
     "window.customMenuBarAltFocus": false,
     "[nginx]": {
@@ -91,4 +91,6 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "editor.formatOnSave": true,
+    "workbench.colorTheme": "One Dark Pro",
+    "terminal.external.linuxExec": "kitty",
 }

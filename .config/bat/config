@@ -1,0 +1,7 @@
+--theme="TwoDark"
+
+--map-syntax ".dockerignore:Git Ignore"
+--map-syntax ".flake8:INI"
+--map-syntax "poetry.lock:TOML"
+--map-syntax "*.env:DotENV"
+--map-syntax "*.env.example:DotENV"

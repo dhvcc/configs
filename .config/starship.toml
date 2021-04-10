@@ -1,5 +1,9 @@
 format = """
-┌ $username📁 $directory🌿 $git_branch$git_status$python
+┌ $username\
+$directory\
+$git_branch \
+$git_status\
+$python
 └❯ 
 """
 
@@ -8,11 +12,13 @@ show_always = true
 style_user = "bold red"
 
 [directory]
+format = "[📁 $path]($style)[$read_only]($read_only_style) "
 style = "bold yellow"
 
 [git_branch]
 allow_show_remote = true
-format = "[$branch]($style) "
+format = "[$symbol $branch]($style)"
+symbol = "🌿"
 style = "bold green"
 
 [git_status]

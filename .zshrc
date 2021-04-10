@@ -1,24 +1,30 @@
-plugins=(git)
+plugins=(git docker docker-compose)
 
-##############
+export VISUAL=vim
+export EDITOR=vim
+
+# Highlight man with "most"
+command -v most > /dev/null 2>&1 && export MANPAGER="most"
+
+#############
 # Oh-my-zsh #
 if [[ -d $HOME/.oh-my-zsh ]]; then
-  plugins+=(docker docker-compose)
-  
   export ZSH="$HOME/.oh-my-zsh"
   export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
-  source $ZSH/oh-my-zsh.sh
 
   [ -d "$ZSH_CUSTOM/plugins/zsh-completions" ] && plugins+=zsh-completions
   [ -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ] && plugins+=zsh-autosuggestions
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#d1d1d1,bg=#525252"
   [ -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ] && plugins+=zsh-syntax-highlighting
+
+  source $ZSH/oh-my-zsh.sh
 fi
 #            #
 ##############
 
 command -v starship > /dev/null && eval "$(starship init zsh)"
-[ -f ~/.config/.aliasrc.sh ] && sourc.she ~/.config/.aliasrc.sh
-[ -f ~/.config/.completionrc.sh ] && sourc.she ~/.config/.completionrc.sh
+[ -f ~/.config/.aliasrc.sh ] && source ~/.config/.aliasrc.sh
+[ -f ~/.config/.completionrc.sh ] && source ~/.config/.completionrc.sh
 
 [ -f ~/.private_aliases.zsh ] && source ~/.private_aliases.zsh
 
