@@ -23,8 +23,12 @@ set laststatus=2
 " NerdTree
 let NERDTreeShowHidden=1
 
-" Vim one
+"""""""""""""""""""
+" Vim-one + KiTTY "
 colorscheme one
+" vim hardcodes background color erase even if the terminfo file does not contain bce
+" This causes incorrect background rendering when using a color theme with a background color.
+let &t_ut=''
 set background=dark
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
@@ -41,7 +45,8 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
-
+"                 "
+"""""""""""""""""""
 " Splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
