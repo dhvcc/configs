@@ -14,6 +14,7 @@ command -v du > /dev/null && alias lss=dus ||  alias lss=lsds
 
 command -v fd > /dev/null && alias find="fd"
 command -v rg > /dev/null && alias grep="rg -i --color always"
+command -v kitty > /dev/null && alias ssh="kitty +kitten ssh"
 
 alias python="python3" \
       pip="pip3" \

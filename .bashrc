@@ -1,4 +1,4 @@
-plugins=(git)
+plugins=git
 
 ##############
 # Oh-my-bash #
@@ -11,8 +11,8 @@ fi
 #            #
 ##############
 
-[ -f ~/.config/.aliasrc.sh ] && sourc.she ~/.config/.aliasrc.sh
-[ -f ~/.config/.completionrc.sh ] && sourc.she ~/.config/.completionrc.sh
+[ -f ~/.config/.aliasrc.sh ] && source ~/.config/.aliasrc.sh
+[ -f ~/.config/.completionrc.sh ] && source ~/.config/.completionrc.sh
 
 [ -f ~/.private_aliases.bash ] && source ~/.private_aliases.bash
 
