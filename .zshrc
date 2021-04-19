@@ -3,8 +3,11 @@ plugins=(git docker docker-compose)
 export VISUAL=vim
 export EDITOR=vim
 
+# Cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # Highlight man with "most"
-command -v most > /dev/null 2>&1 && export MANPAGER="most"
+command -v most >/dev/null 2>&1 && export MANPAGER="most"
 
 #############
 # Oh-my-zsh #
@@ -22,7 +25,7 @@ fi
 #            #
 ##############
 
-command -v starship > /dev/null && eval "$(starship init zsh)"
+command -v starship >/dev/null && eval "$(starship init zsh)"
 [ -f ~/.config/.aliasrc.sh ] && source ~/.config/.aliasrc.sh
 [ -f ~/.config/.completionrc.sh ] && source ~/.config/.completionrc.sh
 
@@ -31,17 +34,16 @@ command -v starship > /dev/null && eval "$(starship init zsh)"
 # FZF key-bindings and completion
 fzf=$(command -v fzf)
 if [[ -n $fzf ]]; then
-  [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && \
-    source /usr/share/doc/fzf/examples/key-bindings.zsh || \
+  [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] &&
+    source /usr/share/doc/fzf/examples/key-bindings.zsh ||
     source /usr/share/fzf/key-bindings.zsh
-  [ -f /usr/share/doc/fzf/examples/completion.zsh ] && \
-    source /usr/share/doc/fzf/examples/completion.zsh || \
+  [ -f /usr/share/doc/fzf/examples/completion.zsh ] &&
+    source /usr/share/doc/fzf/examples/completion.zsh ||
     source /usr/share/fzf/completion.zsh
 fi
 
 # Enable pyenv
-pyenv=$(command -v pyenv)
-if [[ -n $pyenv ]]; then
+if [[ -d "$HOME/.pyenv" ]]; then
   export PYENV_ROOT="$HOME/.pyenv"
   export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
