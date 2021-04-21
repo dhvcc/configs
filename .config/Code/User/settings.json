@@ -1,5 +1,4 @@
 {
-    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "[shellscript]": {
         "editor.defaultFormatter": "foxundermoon.shell-format"
     },
@@ -96,4 +95,5 @@
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
 }
