@@ -14,7 +14,7 @@
     "eslint.debug": true,
     "eslint.lintTask.enable": true,
     "[vue]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
     },
     "[typescript]": {
         "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
@@ -96,4 +96,9 @@
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.renderWhitespace": "all",
 }

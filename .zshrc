@@ -7,11 +7,13 @@ plugins=(
   zsh-syntax-highlighting
 )
 
+export LC_ALL=en_GB.UTF-8
+
 export VISUAL=vim
 export EDITOR=vim
 
-# Cargo
-export PATH="$HOME/.cargo/bin:$PATH"
+# Cargo, Gem
+export PATH="$HOME/.cargo/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 
 # Highlight man with "most"
 export MANPAGER="most"
@@ -52,6 +54,10 @@ fi
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+neofetch --color_blocks off \
+  --disable gpu packages theme icons host resolution \
+  --cpu_temp C
 
 # Install icon font for lsd
 # git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1
