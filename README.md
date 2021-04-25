@@ -15,7 +15,12 @@ curl -Lks https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh
 - [pyenv](https://github.com/pyenv/pyenv-installer)
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts) (Hack Nerd Font Mono)
 - [mon2cam](https://github.com/ShayBox/Mon2Cam) (for dual-monitor linux setup)
+
+### VIM
+
+- [nvim](https://github.com/theniceboy/nvim)
 - [vim-plug](https://github.com/junegunn/vim-plug)
+- [coc.nvim](https://github.com/neoclide/coc.nvim)
 
 ### Shell
 
