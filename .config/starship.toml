@@ -16,7 +16,7 @@ format = "[📁 $path]($style)[$read_only]($read_only_style) "
 style = "bold yellow"
 
 [git_branch]
-allow_show_remote = true
+always_show_remote = true
 format = "[$symbol $branch]($style)"
 symbol = "🌿"
 style = "bold green"
