@@ -7,8 +7,6 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-export LC_ALL=en_GB.UTF-8
-
 export VISUAL=vim
 export EDITOR=vim
 

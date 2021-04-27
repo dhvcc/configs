@@ -27,7 +27,7 @@ curl -Lks https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh
 - [docker-pretty-ps](https://github.com/politeauthority/docker-pretty-ps) (pretty print `docker ps`)
 
     ```bash
-    pip install git+https://github.com/politeauthority/docker-pretty-psgit#egg=docker-pretty-ps --upgrade
+    pip install git+https://github.com/politeauthority/docker-pretty-ps.git#egg=docker-pretty-ps --upgrade
     ```
 
 - [htop](https://github.com/htop-dev/htop/) (better `top`)
@@ -43,8 +43,15 @@ curl -Lks https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh
 
 - [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) (`zsh` config framework)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-- [zsh-syntax-highlight](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 - [zsh-completions](https://github.com/zsh-users/zsh-completions)
+
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+```
 
 ### Terminal
 
