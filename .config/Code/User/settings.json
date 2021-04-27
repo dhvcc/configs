@@ -101,4 +101,7 @@
     },
     "workbench.iconTheme": "material-icon-theme",
     "editor.renderWhitespace": "all",
+    "settingsSync.ignoredExtensions": [
+        "wakatime.vscode-wakatime"
+    ],
 }
