@@ -25,14 +25,11 @@ nmap <C-P> :Files<CR>
 " Ctrl+B toogle tree
 inoremap jk <ESC>
 nmap <C-B> :NERDTreeToggle<CR>
+" Comment lines with Ctrl+/
 filetype plugin on
-nmap <C-/> <plug>NERDCommenterToggle
-nmap <C-Q> :call NERDComment('x', 'toggle')<CR>
+nmap <C-_> <plug>NERDCommenterToggle
 
 let g:python3_host_prog = $HOME."/.pyenv/versions/3.8.5/bin/python3"
-
-" Ctrl+P
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " Move splits with Ctrl instead of Ctrl+W
 nnoremap <C-J> <C-W><C-J>
