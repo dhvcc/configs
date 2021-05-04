@@ -7,8 +7,18 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=nvim
+export EDITOR=nvim
+
+poetry-python() {
+  echo "$(poetry env info --path)/bin/python"
+}
+poetry-source() {
+  . "$(poetry env info --path)/bin/activate"
+}
+
+# FZF
+export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{**/node_modules/**,**/.git/**,**/.idea/**,**/.venv/**,**/venv/**,.**/__pycache__/**,}"'
 
 # Cargo, Gem
 export PATH="$HOME/.cargo/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"

@@ -8,18 +8,26 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'vim-scripts/ShowTrailingWhitespace'
 Plug 'rakr/vim-one'
 
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 call plug#end()
 
+" FZF
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+nmap <C-P> :Files<CR>
+
 " Ctrl+B toogle tree
 inoremap jk <ESC>
 nmap <C-B> :NERDTreeToggle<CR>
-vmap ++ <plug>NERDCommenterToggle
-nmap ++ <plug>NERDCommenterToggle
+filetype plugin on
+nmap <C-/> <plug>NERDCommenterToggle
+nmap <C-Q> :call NERDComment('x', 'toggle')<CR>
 
 let g:python3_host_prog = $HOME."/.pyenv/versions/3.8.5/bin/python3"
 
@@ -34,6 +42,7 @@ nnoremap <C-H> <C-W><C-H>
 
 """"""""""""
 " NerdTree "
+let NERDTreeShowHidden=1
 let g:NERDTreeGitStatusWithFlags = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:NERDTreeGitStatusNodeColorization = 1

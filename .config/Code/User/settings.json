@@ -104,4 +104,7 @@
     "settingsSync.ignoredExtensions": [
         "wakatime.vscode-wakatime"
     ],
+    "[django-html]": {
+        "editor.formatOnSave": false
+    }
 }
