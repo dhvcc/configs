@@ -16,6 +16,14 @@ curl -Lks https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh
 - [nvm](https://github.com/nvm-sh/nvm)
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts) (Hack Nerd Font Mono)
 - [mon2cam](https://github.com/ShayBox/Mon2Cam) (for dual-monitor linux setup)
+- [matter](https://github.com/mateosss/matter) (GRUB theme)
+
+```bash
+sudo ./matter.py -i manjaro linux manjaro manjaro microsoft-windows cog microsoft-windows memory \
+-hl ef233c -fg 2b2d42 -bg edf2f4 \
+-ff /usr/share/fonts/Josefin_Sans/static/JosefinSans-Regular.ttf \
+-fn Josefin Sans Regular -fs 16
+```
 
 ### VIM
 
