@@ -44,3 +44,4 @@ export NVM_DIR="$HOME/.nvm"
 # cd nerd_fonts/
 # ./install.sh Hack
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

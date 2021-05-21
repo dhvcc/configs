@@ -13,6 +13,7 @@ curl -Lks https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh
 ### System
 
 - [pyenv](https://github.com/pyenv/pyenv-installer)
+- [nvm](https://github.com/nvm-sh/nvm)
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts) (Hack Nerd Font Mono)
 - [mon2cam](https://github.com/ShayBox/Mon2Cam) (for dual-monitor linux setup)
 
@@ -31,13 +32,13 @@ curl -Lks https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh
     ```
 
 - [htop](https://github.com/htop-dev/htop/) (better `top`)
-- [fzf](https://github.com/junegunn/fzf) (`Ctrl+R` shell history search)
-- [rgipgrep](https://github.com/BurntSushi/ripgrep) (better `grep`)
+- [fzf](https://github.com/junegunn/fzf) (`Ctrl+R` shell history search) `cargo`
+- [rgipgrep](https://github.com/BurntSushi/ripgrep) (better `grep`) `cargo`
 - [lsd](https://github.com/Peltoche/lsd) (better `ls`)
-- [bat](https://github.com/sharkdp/bat) (better `cat`)
+- [bat](https://github.com/sharkdp/bat) (better `cat`) `cargo`
 - [ranger](https://github.com/ranger/ranger) (terminal file manager)
 - [most](http://www.jedsoft.org/most/) (better pager than `less`, used for `man`)
-- [starship](https://github.com/denysdovhan/spaceship-prompt) (shell prompt)
+- [spaceship](https://github.com/denysdovhan/spaceship-prompt) (shell prompt)
 
 ### ZSH
 
@@ -57,3 +58,4 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 
 - [kitty](https://github.com/kovidgoyal/kitty) (fast and feature-rich terminal emulator)
 - [kitty-themes](https://github.com/dexpota/kitty-themes) (Broadcast)
+- [nautilus-terminal](https://github.com/flozz/nautilus-terminal#ubuntu-2004-and-later)

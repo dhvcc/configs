@@ -2,7 +2,6 @@
     "[shellscript]": {
         "editor.defaultFormatter": "foxundermoon.shell-format"
     },
-    "python.defaultInterpreterPath": "/usr/bin/python3",
     "workbench.tree.indent": 20,
     "window.titleBarStyle": "custom",
     "window.customMenuBarAltFocus": false,
@@ -97,7 +96,7 @@
     },
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
     },
     "workbench.iconTheme": "material-icon-theme",
     "editor.renderWhitespace": "all",

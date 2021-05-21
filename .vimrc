@@ -29,7 +29,9 @@ nmap <C-B> :NERDTreeToggle<CR>
 filetype plugin on
 nmap <C-_> <plug>NERDCommenterToggle
 
-let g:python3_host_prog = $HOME."/.pyenv/versions/3.8.5/bin/python3"
+let g:loaded_python_provider = 0
+let g:loaded_ruby_provider = 0
+let g:python3_host_prog = $HOME."/.vim/.venv/bin/python3"
 
 " Move splits with Ctrl instead of Ctrl+W
 nnoremap <C-J> <C-W><C-J>
