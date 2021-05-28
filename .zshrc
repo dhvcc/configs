@@ -10,12 +10,7 @@ plugins=(
 export VISUAL=nvim
 export EDITOR=nvim
 
-poetry-python() {
-  echo "$(poetry env info --path)/bin/python"
-}
-poetry-source() {
-  . "$(poetry env info --path)/bin/activate"
-}
+
 
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{**/node_modules/**,**/.git/**,**/.idea/**,**/.venv/**,**/venv/**,.**/__pycache__/**,}"'
@@ -38,13 +33,23 @@ source $ZSH/oh-my-zsh.sh
 # Starship prompt initialization
 eval "$(starship init zsh)"
 
-############
-# RC files #
+##########################
+# RC files and functions #
 source ~/.config/.aliasrc.sh
 source ~/.config/.completionrc.sh
 if [ -f "$HOME/.config/.private_aliases.sh" ]; then source ~/.config/.private_aliases.sh; fi
-#          #
-############
+
+clipp() {
+  output="$(poetry env info)"
+  if [ $? -eq 0 ]; then
+    echo -n "$(poetry env info --path)/bin/python" | clip
+    echo "Copied poetry python path to clipboard"
+  else
+    echo $output
+  fi
+}
+#                        #
+##########################
 
 # FZF key-bindings and completion
 if [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]; then
