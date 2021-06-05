@@ -39,13 +39,23 @@ source $ZSH/oh-my-zsh.sh
 # Starship prompt initialization
 eval "$(starship init zsh)"
 
-############
-# RC files #
+##########################
+# RC files and functions #
 source ~/.config/.aliasrc.sh
 source ~/.config/.completionrc.sh
 if [ -f "$HOME/.config/.private_aliases.sh" ]; then source ~/.config/.private_aliases.sh; fi
-#          #
-############
+
+clipp() {
+  output="$(poetry env info)"
+  if [ $? -eq 0 ]; then
+    echo -n "$(poetry env info --path)/bin/python" | clip
+    echo "Copied poetry python path to clipboard"
+  else
+    echo $output
+  fi
+}
+#                        #
+##########################
 
 # FZF key-bindings and completion
 if [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]; then
