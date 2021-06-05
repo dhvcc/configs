@@ -106,5 +106,5 @@
     ],
     "[django-html]": {
         "editor.formatOnSave": false
-    }
+    },
 }

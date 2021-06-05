@@ -5,6 +5,7 @@ plugins=(
   zsh-completions
   zsh-autosuggestions
   zsh-syntax-highlighting
+  poetry
 )
 
 export VISUAL=nvim
@@ -13,7 +14,7 @@ export EDITOR=nvim
 poetry-python() {
   echo "$(poetry env info --path)/bin/python"
 }
-poetry-source() {
+poetry-shell() {
   . "$(poetry env info --path)/bin/activate"
 }
 
