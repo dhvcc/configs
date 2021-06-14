@@ -54,6 +54,7 @@ sudo ./matter.py -i manjaro linux manjaro manjaro microsoft-windows cog microsof
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 - [zsh-completions](https://github.com/zsh-users/zsh-completions)
+- [poetry completion](https://python-poetry.org/docs/#enable-tab-completion-for-bash-fish-or-zsh)
 
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
