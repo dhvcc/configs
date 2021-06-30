@@ -40,7 +40,7 @@ sudo ./matter.py -i manjaro linux manjaro manjaro microsoft-windows cog microsof
     ```
 
 - [htop](https://github.com/htop-dev/htop/) (better `top`)
-- [fzf](https://github.com/junegunn/fzf) (`Ctrl+R` shell history search) `cargo`
+- [fzf](https://github.com/junegunn/fzf) (`Ctrl+R` shell history search)
 - [rgipgrep](https://github.com/BurntSushi/ripgrep) (better `grep`) `cargo`
 - [lsd](https://github.com/Peltoche/lsd) (better `ls`)
 - [bat](https://github.com/sharkdp/bat) (better `cat`) `cargo`
