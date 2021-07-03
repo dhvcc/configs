@@ -21,7 +21,7 @@
     "explorer.confirmDragAndDrop": false,
     "todo-tree.tree.showScanModeButton": false,
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
+        "*.ipynb": "jupyter-notebook"
     },
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
@@ -104,4 +104,9 @@
     "[django-html]": {
         "editor.formatOnSave": false
     },
+    "redhat.telemetry.enabled": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    }
 }

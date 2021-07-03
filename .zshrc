@@ -8,6 +8,8 @@ plugins=(
   poetry
 )
 
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
 export VISUAL=nvim
 export EDITOR=nvim
 
