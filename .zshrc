@@ -58,16 +58,19 @@ clipp() {
 ##########################
 
 # FZF key-bindings and completion
-if [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]; then
-  source /usr/share/doc/fzf/examples/key-bindings.zsh
-else
-  source /usr/share/fzf/key-bindings.zsh
-fi
-if [ -f /usr/share/doc/fzf/examples/completion.zsh ]; then
-  source /usr/share/doc/fzf/examples/completion.zsh
-else
-  source /usr/share/fzf/completion.zsh
-fi
+if [ ! -d $HOME/.fzf ]; then
+  if [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]; then
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+  else
+   source /usr/share/fzf/key-bindings.zsh
+  fi
+  if [ -f /usr/share/doc/fzf/examples/completion.zsh ]; then
+   source /usr/share/doc/fzf/examples/completion.zsh
+  else
+   source /usr/share/fzf/completion.zsh
+  fi
+fi;
+
 
 # Enable pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -87,3 +90,5 @@ neofetch --color_blocks off \
 # git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1
 # cd nerd_fonts/
 # ./install.sh Hack
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
