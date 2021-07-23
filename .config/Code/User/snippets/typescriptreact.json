@@ -5,5 +5,26 @@
 			"console.log($0);"
 		],
 		"description": "Log output to console"
+	},
+	"React/TS/MUI component": {
+		"prefix": "tsmui",
+		"body": [
+			"import { createStyles, makeStyles, Theme } from '@material-ui/core';",
+			"",
+			"type Props = {",
+			"    $2",
+			"};",
+			"",
+			"const useStyles = makeStyles<Theme${3:, Props}>((theme: Theme) => createStyles({",
+			"    ",
+			"}))",
+			"",
+			"export const ${1:ComponentName} = (${4|props,{}|}: Props) => {",
+			"    const classes = useStyles();",
+			"    $0",
+			"    return <div></div>;",
+			"};",
+		],
+		"description": "Functional component with useStyles and typescript props",
 	}
 }
