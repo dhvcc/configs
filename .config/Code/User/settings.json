@@ -115,5 +115,6 @@
         "yaml": false,
         "plaintext": false,
         "markdown": false
-    }
+    },
+    "window.zoomLevel": -0.3
 }
