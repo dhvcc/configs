@@ -87,7 +87,6 @@
     "editor.formatOnSave": true,
     "workbench.colorTheme": "One Dark Pro",
     "terminal.external.linuxExec": "kitty",
-    "oneDarkPro.italic": false,
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
@@ -116,5 +115,7 @@
         "plaintext": false,
         "markdown": false
     },
-    "window.zoomLevel": -0.3
+    "window.zoomLevel": 1,
+    "workbench.sideBar.location": "right",
+    "oneDarkPro.italic": false
 }
