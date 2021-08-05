@@ -1,7 +1,7 @@
 #!/bin/sh
 # Origin https://bitbucket.org/durdn/cfg/src/master/.bin/install.sh
 
-git clone --bare git@github.com:dhvcc/configs.git $HOME/.cfg
+git clone --bare https://github.com/dhvcc/configs.git $HOME/.cfg
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@"
 
 mkdir -p .config-backup
@@ -15,4 +15,4 @@ if [ $? = 0 ]; then
 fi;
 
 config checkout
-config config status.showUntrackedFiles no
+config "config" status.showUntrackedFiles no
