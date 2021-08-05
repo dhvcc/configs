@@ -46,7 +46,7 @@ sudo ./matter.py -i manjaro linux manjaro manjaro microsoft-windows cog microsof
 - [bat](https://github.com/sharkdp/bat) (better `cat`) `cargo`
 - [ranger](https://github.com/ranger/ranger) (terminal file manager)
 - [most](http://www.jedsoft.org/most/) (better pager than `less`, used for `man`)
-- [spaceship](https://github.com/denysdovhan/spaceship-prompt) (shell prompt)
+- [starship](https://starship.rs/) (shell prompt)
 
 ### ZSH
 
