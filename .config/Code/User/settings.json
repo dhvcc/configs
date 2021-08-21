@@ -117,5 +117,11 @@
     },
     "window.zoomLevel": 1,
     "workbench.sideBar.location": "right",
-    "oneDarkPro.italic": false
+    "oneDarkPro.italic": false,
+    "editor.lineNumbers": "relative",
+    "vim.enableNeovim": true,
+    "vim.handleKeys": {
+        "<C-c>": false,
+        "<C-v>": false
+    }
 }
