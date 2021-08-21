@@ -122,6 +122,9 @@
     "vim.enableNeovim": true,
     "vim.handleKeys": {
         "<C-c>": false,
-        "<C-v>": false
-    }
+        "<C-v>": false,
+        "<C-h>": false,
+        "<C-f>": false,
+        "<C-w>": false,
+    },
 }
