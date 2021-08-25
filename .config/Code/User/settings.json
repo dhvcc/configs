@@ -87,7 +87,6 @@
     "editor.formatOnSave": true,
     "workbench.colorTheme": "One Dark Pro",
     "terminal.external.linuxExec": "kitty",
-    "oneDarkPro.italic": false,
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
@@ -108,5 +107,24 @@
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
-    }
+    },
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": false,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false
+    },
+    "window.zoomLevel": 1,
+    "workbench.sideBar.location": "right",
+    "oneDarkPro.italic": false,
+    "editor.lineNumbers": "relative",
+    "vim.enableNeovim": true,
+    "vim.handleKeys": {
+        "<C-c>": false,
+        "<C-v>": false,
+        "<C-h>": false,
+        "<C-f>": false,
+        "<C-w>": false,
+    },
 }

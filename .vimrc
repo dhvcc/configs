@@ -1,23 +1,24 @@
 call plug#begin('~/.vim/plugged')
-"Plug 'wakatime/vim-wakatime'
+Plug 'rakr/vim-one' " Theme
+Plug 'wakatime/vim-wakatime' " Time tracking
+Plug 'vim-scripts/ShowTrailingWhitespace' " Trailing whitespace highlight
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Language support
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Language server support
+Plug 'ray-x/lsp_signature.nvim' " Function signature (and arguments) as you type
+Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 
+" NERDTree
 Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'scrooloose/nerdcommenter'
+Plug 'Xuyuanp/nerdtree-git-plugin' " Git status in NERDTree
+Plug 'scrooloose/nerdcommenter' " Ctrl+/ comment toggle
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons' " Icons for NERDTree
 
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter' " Git diffs
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-Plug 'vim-scripts/ShowTrailingWhitespace'
-Plug 'rakr/vim-one'
-
-Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+Plug 'junegunn/fzf.vim' " FZF support for Ctrl+P
 call plug#end()
 
 " FZF
