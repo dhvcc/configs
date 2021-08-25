@@ -8,6 +8,8 @@ plugins=(
   poetry
 )
 
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
 export VISUAL=nvim
 export EDITOR=nvim
 
@@ -80,7 +82,10 @@ eval "$(pyenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm use > /dev/null
+
+# Add pem files to agent
+ls "$HOME/.ssh/pem" | xargs -i ssh-add "$HOME/.ssh/pem/"{} >/dev/null 2>&1
 
 neofetch --color_blocks off \
   --disable gpu packages theme icons host resolution \
