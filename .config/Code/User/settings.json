@@ -129,9 +129,9 @@
         "<C-w>": false,
         "<C-g>": false,
         "<C-b>": false,
-        "<C-d>": false,
+        "<C-d>": false
     },
     "editor.autoClosingBrackets": "always",
     "editor.fontWeight": null,
-    "editor.codeActionsOnSave": null,
+    "editor.codeActionsOnSave": null
 }

@@ -1,5 +1,6 @@
 format = """
 ┌ $username\
+$hostname\
 $directory\
 $git_branch \
 $git_status\
@@ -10,9 +11,16 @@ $python
 [username]
 show_always = true
 style_user = "bold red"
+format = "[$user ]($style)"
+
+[hostname]
+ssh_only = true
+style = "bright-red"
+format = '\[[$hostname]($style)\] '
+
 
 [directory]
-format = "[📁 $path]($style)[$read_only]($read_only_style) "
+format = "[in 📁 $path]($style)[$read_only]($read_only_style) "
 style = "bold yellow"
 
 [git_branch]
