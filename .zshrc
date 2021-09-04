@@ -24,10 +24,7 @@ poetry-shell() {
 export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{**/node_modules/**,**/.git/**,**/.idea/**,**/.venv/**,**/venv/**,.**/__pycache__/**,}"'
 
 # Cargo, Gem
-export PATH="$HOME/.cargo/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
-
-# Highlight man with "most"
-export MANPAGER="most"
+export PATH="$HOME/go:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 
 #############
 # Oh-my-zsh #
