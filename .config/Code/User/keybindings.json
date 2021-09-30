@@ -213,5 +213,23 @@
         "key": "ctrl+a",
         "command": "-extension.vim_ctrl+a",
         "when": "editorTextFocus && vim.active && vim.use<C-a> && !inDebugRepl"
+    },
+    {
+        "key": "shift+k",
+        "command": "workbench.action.nextEditor",
+        "when": "vim.active && !inputFocus && vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "-workbench.action.nextEditor"
+    },
+    {
+        "key": "shift+j",
+        "command": "workbench.action.previousEditor",
+        "when": "vim.active && vim.mode != 'Insert' && !inputFocus"
+    },
+    {
+        "key": "ctrl+pageup",
+        "command": "-workbench.action.previousEditor"
     }
 ]
