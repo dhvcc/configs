@@ -1,6 +1,11 @@
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
-alias clip="xclip -sel clip"
+if [ -n "$SSH_CLIENT" -a -n "$(command -v kitty)" ]; then
+  alias clip="kitty +kitten clipboard";
+else
+  alias clip="xclip -sel clip";
+fi
+
 alias mon2cam="deno run --unstable -A -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts"
 
 alias vim=nvim
