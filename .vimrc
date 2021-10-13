@@ -63,7 +63,7 @@ let g:NERDTreeIgnore = ['^node_modules$', '^venv$', '^.venv$', '^__pycache__$', 
 """"""""""""
 
 
-set relativenumber
+set number relativenumber
 
 set smarttab
 set cindent

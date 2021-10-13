@@ -68,3 +68,7 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 - [kitty](https://github.com/kovidgoyal/kitty) (fast and feature-rich terminal emulator)
 - [kitty-themes](https://github.com/dexpota/kitty-themes) (Broadcast)
 - [nautilus-terminal](https://github.com/flozz/nautilus-terminal#ubuntu-2004-and-later)
+
+## Configuration
+
+1. `neofetch` can be turned off with `export NEOFETCH=0` (in something like `/etc/profile`)
