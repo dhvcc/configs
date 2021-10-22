@@ -1,5 +1,10 @@
 # Configs
 
+Basic showcase
+
+![image](https://user-images.githubusercontent.com/18076967/138457820-366c21ba-f852-4b23-b665-dadada909738.png)
+
+
 ## Install
 
 ```shell
