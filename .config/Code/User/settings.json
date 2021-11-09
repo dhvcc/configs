@@ -130,5 +130,10 @@
     "editor.autoClosingBrackets": "always",
     "editor.fontWeight": null,
     "editor.codeActionsOnSave": null,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "editor.bracketPairColorization.enabled": true,
+    "workbench.editor.enablePreview": false,
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    }
 }
