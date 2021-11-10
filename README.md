@@ -24,8 +24,9 @@ curl -Lks https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh
 - [nvm](https://github.com/nvm-sh/nvm)
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts) (Hack Nerd Font Mono)
     ```bash
-    mkdir -p ~/.local/share/fonts
-    cd ~/.local/share/fonts && curl -fLo "Hack Regular Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
+    sudo mkdir -p /usr/share/fonts/hack
+    cd /usr/share/fonts/hack && sudo curl -fLo "Hack Regular Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
+    sudo fc-cache -f -v
     ```
 - [mon2cam](https://github.com/ShayBox/Mon2Cam) (for dual-monitor linux setup)
 - [matter](https://github.com/mateosss/matter) (GRUB theme)
