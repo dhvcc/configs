@@ -11,6 +11,9 @@ Basic showcase
 curl -Lks https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh | /bin/sh
 ```
 
+You may want to add
+`echo '0 0 * * * config pull --rebase` as a cron job (`crontab -e`)
+
 **Warning**, Bash configs are outdated
 
 ## Dependencies
@@ -121,4 +124,5 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 
 ## Configuration
 
-1. `neofetch` can be turned off with `export NEOFETCH=0` (in something like `/etc/profile`)
+- `neofetch` can be turned off with `export NEOFETCH=0` (in something like `/etc/profile`
+
