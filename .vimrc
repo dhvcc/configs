@@ -44,6 +44,7 @@ nnoremap <C-H> <C-W><C-H>
 
 """"""""""""
 " NerdTree "
+let NERDTreeShowLineNumbers=1
 let NERDTreeShowHidden=1
 let g:NERDTreeGitStatusWithFlags = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
