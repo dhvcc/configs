@@ -42,7 +42,7 @@ You may want to add
 
 ### VIM
 
-- [nvim](https://github.com/theniceboy/nvim)
+- [nvim](https://github.com/neovim/neovim)
 - [vim-plug](https://github.com/junegunn/vim-plug)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 
