@@ -16,3 +16,4 @@ fi;
 
 config checkout
 config "config" status.showUntrackedFiles no
+config "config" commit.verbose true
