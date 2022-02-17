@@ -24,7 +24,7 @@ poetry-shell() {
 export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{**/node_modules/**,**/.git/**,**/.idea/**,**/.venv/**,**/venv/**,.**/__pycache__/**,}"'
 
 # Cargo, Gem
-export PATH="$HOME/go:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
+export PATH="$HOME/go:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/.poetry/bin:$PATH"
 
 #############
 # Oh-my-zsh #
@@ -75,6 +75,7 @@ fi;
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
 # Defer initialization of nvm until nvm, node or a node-dependent command is
