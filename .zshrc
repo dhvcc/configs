@@ -6,6 +6,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   poetry
+  zsh-vi-mode
 )
 
 export HISTSIZE=1000000
@@ -21,7 +22,7 @@ poetry-shell() {
 }
 
 # FZF
-export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{**/node_modules/**,**/.git/**,**/.idea/**,**/.venv/**,**/venv/**,.**/__pycache__/**,}"'
+export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden'
 
 # Cargo, Gem
 export PATH="$HOME/go:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/.poetry/bin:$PATH"
@@ -107,3 +108,5 @@ ls "$HOME/.ssh/pem" | xargs -i ssh-add "$HOME/.ssh/pem/"{} >/dev/null 2>&1
 # ./install.sh Hack
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$HOME/.poetry/bin:$PATH"

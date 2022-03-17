@@ -200,11 +200,6 @@
         "when": "viewContainer.workbench.view.extensions.enabled"
     },
     {
-        "key": "ctrl+o",
-        "command": "-extension.vim_ctrl+o",
-        "when": "editorTextFocus && vim.active && vim.use<C-o> && !inDebugRepl"
-    },
-    {
         "key": "ctrl+n",
         "command": "-extension.vim_ctrl+n",
         "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
@@ -233,18 +228,18 @@
         "command": "-workbench.action.previousEditor"
     },
     {
-        "key": "ctrl+o",
-        "command": "workbench.action.navigateBack",
-        "when": "vim.active && vim.mode != insert"
-    },
-    {
         "key": "ctrl+shift+o",
         "command": "workbench.action.files.openFile",
         "when": "true"
     },
     {
         "key": "ctrl+o",
-        "command": "-workbench.action.files.openFile",
-        "when": "true"
+        "command": "extension.vim_ctrl+o",
+        "when": "editorTextFocus && vim.active && vim.use<C-o> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "extension.vim_ctrl+i",
+        "when": "editorTextFocus && vim.active && vim.use<C-i> && !inDebugRepl"
     }
 ]

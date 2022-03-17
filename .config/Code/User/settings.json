@@ -5,6 +5,7 @@
     "workbench.tree.indent": 20,
     "window.titleBarStyle": "custom",
     "window.customMenuBarAltFocus": false,
+    "workbench.editor.enablePreview": true,
     "[nginx]": {
         "editor.defaultFormatter": "raynigon.nginx-formatter"
     },
@@ -65,7 +66,7 @@
         "editor.defaultFormatter": "ms-python.python"
     },
     "[scss]": {
-        "editor.defaultFormatter": "sasa.vscode-sass-format"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[css]": {
         "editor.defaultFormatter": "sasa.vscode-sass-format"
@@ -84,12 +85,12 @@
     "[typescriptreact]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "workbench.colorTheme": "One Dark Pro",
     "terminal.external.linuxExec": "kitty",
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "[javascript]": {
-        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "workbench.iconTheme": "material-icon-theme",
     "editor.renderWhitespace": "all",
@@ -125,15 +126,27 @@
         "<C-w>": false,
         "<C-g>": false,
         "<C-b>": false,
-        "<C-d>": false
+        "<C-d>": false,
+        "<C-o>": true,
+        "<C-i>": true
     },
     "editor.autoClosingBrackets": "always",
     "editor.fontWeight": null,
     "editor.codeActionsOnSave": null,
-    "window.zoomLevel": 1,
     "editor.bracketPairColorization.enabled": true,
-    "workbench.editor.enablePreview": false,
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-    }
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "debug.inlineValues": true,
+    "workbench.editor.wrapTabs": true,
+    "cSpell.userWords": [
+        "borderless",
+        "btns",
+        "camelcase",
+        "consts",
+        "Mutators"
+    ],
+    "scm.defaultViewMode": "tree",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
 }

@@ -16,11 +16,13 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons' " Icons for NERDTree
 
 Plug 'airblade/vim-gitgutter' " Git diffs
+Plug 'zivyangll/git-blame.vim' " Git blame
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' " FZF support for Ctrl+P
 call plug#end()
 
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 " FZF
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 nmap <C-P> :Files<CR>
@@ -37,8 +39,13 @@ let g:loaded_ruby_provider = 0
 let g:python3_host_prog = $HOME."/.vim/.venv/bin/python3"
 
 " Move splits with Ctrl instead of Ctrl+W
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
+noremap <A-k> :vertical resize +5<CR>
+noremap <A-j> :vertical resize -5<CR>
+
+noremap <C-j> :tabprevious<CR>
+noremap <C-k> :tabnext<CR>
+noremap <C-t> :tabnew<CR>
+
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
@@ -60,6 +67,8 @@ let g:NERDTreeColorMapCustom = {
     \ "Ignored"   : "#808080"   
     \ }                         
 let g:NERDTreeIgnore = ['^node_modules$', '^venv$', '^.venv$', '^__pycache__$', '.sass-cache']
+:let g:NERDTreeShowLineNumbers=1
+:autocmd BufEnter NERD_* setlocal rnu
 "          "
 """"""""""""
 
@@ -204,7 +213,7 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Using CocList
 " Show all diagnostics
