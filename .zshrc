@@ -6,7 +6,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   poetry
-  zsh-vi-mode
+#  zsh-vi-mode
 )
 
 export HISTSIZE=1000000
