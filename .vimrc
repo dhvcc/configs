@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+Plug 'easymotion/vim-easymotion' " characte jumping
 Plug 'rakr/vim-one' " Theme
 Plug 'wakatime/vim-wakatime' " Time tracking
 Plug 'vim-scripts/ShowTrailingWhitespace' " Trailing whitespace highlight
@@ -21,6 +22,10 @@ Plug 'zivyangll/git-blame.vim' " Git blame
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' " FZF support for Ctrl+P
 call plug#end()
+
+" f is single-char, F is double-char bidirectional motion search
+map f <Plug>(easymotion-s)
+map F <Plug>(easymotion-s2)
 
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 " FZF
