@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 " Meta and UI
 Plug 'editorconfig/editorconfig-vim' " editorconfig support
-Plug 'rakr/vim-one' " Theme
+Plug 'arcticicestudio/nord-vim' " Theme
 Plug 'wakatime/vim-wakatime' " Time tracking
 Plug 'vim-scripts/ShowTrailingWhitespace' " Trailing whitespace highlight
 Plug 'vim-airline/vim-airline' " Statusline
@@ -30,15 +30,12 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
-" f is single-char, F is double-char bidirectional motion search
-map f <Plug>(easymotion-s)
-map F <Plug>(easymotion-s2)
-
-" TODO: fix renamer & comment
+" TODO: fix renamer
 
 """"""""""
-" Editor "
-
+" Basics "
+colorscheme nord
+"
 " Relative number
 set number relativenumber
 
@@ -48,12 +45,16 @@ set tabstop=2
 set shiftwidth=2
 " always uses spaces instead of tab characters
 set expandtab
-"        "
-""""""""""
 
 " Show trailing spaces
 set list
 set listchars+=trail:◦
+"        "
+""""""""""
+
+" f is single-char, F is double-char bidirectional motion search
+map f <Plug>(easymotion-s)
+map F <Plug>(easymotion-s2)
 
 " Renamer Alt+F2
 inoremap <silent> <F2> <cmd>lua require('renamer').rename()<cr>
@@ -109,10 +110,9 @@ let g:NERDTreeIgnore = ['^node_modules$', '^venv$', '^.venv$', '^__pycache__$', 
 "          "
 """"""""""""
 
-"""""""""""""""""""
-" Vim-one + KiTTY "
+""""""""""""""""""""""""
+" transparency + KiTTY "
 " https://github.com/kovidgoyal/kitty/issues/108
-colorscheme one
 
 let &t_ut=''
 set background=dark
@@ -125,8 +125,9 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
-"                 "
-"""""""""""""""""""
+"                      "
+""""""""""""""""""""""""
+
 
 """""""
 " coc "
