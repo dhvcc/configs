@@ -3,7 +3,7 @@ alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 if [ -n "$SSH_CLIENT" -a -n "$(command -v kitty)" ]; then
   alias clip="kitty +kitten clipboard";
 elif [ -n "$WSL_DISTRO_NAME" ]; then
-  clip() { cat $1 | clip.exe }
+  clip() { cat $1 | clip.exe; };
 else
   alias clip="xclip -sel clip";
 fi
