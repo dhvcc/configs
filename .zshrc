@@ -98,14 +98,7 @@ fi
 # Add pem files to agent
 ls "$HOME/.ssh/pem" | xargs -i ssh-add "$HOME/.ssh/pem/"{} >/dev/null 2>&1
 
-[ ! "$NEOFETCH" = "0" ] && neofetch --color_blocks off \
-  --disable gpu packages theme icons host resolution \
-  --cpu_temp C
-
-# Install icon font for lsd
-# git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1
-# cd nerd_fonts/
-# ./install.sh Hack
+[ ! "$NEOFETCH" = "0" ] && neofetch
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
