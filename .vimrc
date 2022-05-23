@@ -1,7 +1,8 @@
 call plug#begin('~/.vim/plugged')
 " Meta and UI
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'editorconfig/editorconfig-vim' " editorconfig support
-Plug 'arcticicestudio/nord-vim' " Theme
+Plug 'dhvcc/nord-vim' " Theme
 Plug 'wakatime/vim-wakatime' " Time tracking
 Plug 'vim-scripts/ShowTrailingWhitespace' " Trailing whitespace highlight
 Plug 'vim-airline/vim-airline' " Statusline
@@ -30,7 +31,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
-" TODO: fix renamer
+" TODO: fix renamer and comments
 
 """"""""""
 " Basics "
