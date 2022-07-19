@@ -2,18 +2,18 @@
 
 Basic showcase
 
-![image](https://user-images.githubusercontent.com/18076967/138457820-366c21ba-f852-4b23-b665-dadada909738.png)
+![desktop](https://user-images.githubusercontent.com/18076967/179727974-d9bdf501-f911-4ff7-9bc3-8021d7f096ec.png)
 
 ## Install
 
-Before installing, remove .bashrc or .zshrc which may conflict with the ones being pulled from this repo. Before retrying, remove "$HOME"/.cfg directory
+Before installing, remove `.bashrc` or `.zshrc` which may conflict with the ones being pulled from this repo. Before retrying, remove `"$HOME"/.cfg` directory
 
 ```shell
 curl -Lks https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh | /bin/sh
 ```
 
 You may want to add
-`echo '0 0 * * * config pull --rebase` as a cron job (`crontab -e`)
+`0 0 * * * config pull --rebase` as a cron job (`crontab -e`)
 
 **Warning**, Bash configs are outdated
 
@@ -57,14 +57,7 @@ gsettings reset org.gnome.desktop.input-sources xkb-options # allow to Alt+Shift
     ```
 
 - [mon2cam](https://github.com/ShayBox/Mon2Cam) (for dual-monitor linux setup)
-- [matter](https://github.com/mateosss/matter) (GRUB theme)
-
-    ```bash
-    sudo ./matter.py -i manjaro linux manjaro manjaro microsoft-windows cog microsoft-windows memory \
-    -hl ef233c -fg 2b2d42 -bg edf2f4 \
-    -ff /usr/share/fonts/Josefin_Sans/static/JosefinSans-Regular.ttf \
-    -fn Josefin Sans Regular -fs 16
-    ```
+- [matter](https://github.com/mateosss/matter) (theme GRUB)
 
 ### VIM
 
@@ -118,13 +111,15 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 - [zsh-completions](https://github.com/zsh-users/zsh-completions)
-- [poetry completion](https://python-poetry.org/docs/#enable-tab-completion-for-bash-fish-or-zsh)
 
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+# poetry completion
+mkdir $ZSH_CUSTOM/plugins/poetry
+poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
 ```
 
 ### Terminal
@@ -155,4 +150,4 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 
 ## Configuration
 
-- `neofetch` can be turned off with `export NEOFETCH=0` (in something like `/etc/profile`
+- `neofetch` can be turned off with `export NEOFETCH=0` (in something like `/etc/profile`)
