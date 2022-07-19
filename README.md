@@ -17,6 +17,12 @@ You may want to add
 
 **Warning**, Bash configs are outdated
 
+## Configuration
+
+- Any additional rc stuff for `.zshrc` or `.bashrc` you can add into `.config/.private_aliases.sh`
+- `neofetch` can be turned off with `export NEOFETCH=0` (in something like `/etc/profile`)
+- Place a picture for neofetch into `.config/neofetch/resources/source.jpg`
+
 ## Dependencies
 
 ### System
@@ -147,9 +153,3 @@ poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
     ```
 
 - [nautilus-terminal](https://github.com/flozz/nautilus-terminal#ubuntu-2004-and-later)
-
-## Configuration
-
-- Any additional rc stuff for `.zshrc` or `.bashrc` you can add into `.config/.private_aliases.sh`
-- `neofetch` can be turned off with `export NEOFETCH=0` (in something like `/etc/profile`)
-- Place a picture for neofetch into `.config/neofetch/resources/source.jpg`
