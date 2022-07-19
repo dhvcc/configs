@@ -150,4 +150,6 @@ poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
 
 ## Configuration
 
+- Any additional rc stuff for `.zshrc` or `.bashrc` you can add into `.config/.private_aliases.sh`
 - `neofetch` can be turned off with `export NEOFETCH=0` (in something like `/etc/profile`)
+- Place a picture for neofetch into `.config/neofetch/resources/source.jpg`
