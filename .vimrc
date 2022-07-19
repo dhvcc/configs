@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 " Meta and UI
+Plug 'mechatroner/rainbow_csv'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'editorconfig/editorconfig-vim' " editorconfig support
 Plug 'dhvcc/nord-vim' " Theme
@@ -140,7 +141,15 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ 'coc-prettier',
   \ 'coc-json',
+  \ '@yaegassy/coc-ansible',
   \ ]
+" Set ansible filetypes for certain files
+au BufRead,BufNewFile */ansible/*.yml,*.yaml set ft=yaml.ansible
+au BufRead,BufNewFile playbook.yml,*.yaml set ft=yaml.ansible
+" Set filetype map
+let g:coc_filetype_map = {
+  \ 'yaml.ansible': 'ansible',
+  \ }
 " if hidden is not set, TextEdit might fail.
 set hidden " Some servers have issues with backup files, see #649 set nobackup set nowritebackup " Better display for messages set cmdheight=2 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300

@@ -103,3 +103,5 @@ ls "$HOME/.ssh/pem" | xargs -i ssh-add "$HOME/.ssh/pem/"{} >/dev/null 2>&1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$HOME/.poetry/bin:$PATH"
+fpath=(~/.zsh/completions $fpath)
+autoload -U compinit && compinit
