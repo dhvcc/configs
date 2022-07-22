@@ -80,12 +80,14 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 
 #### Pip
 
+- [pipx](https://github.com/pypa/pipx)
 - [docker-pretty-ps](https://github.com/politeauthority/docker-pretty-ps) (pretty print `docker ps`)
 - [ranger](https://github.com/ranger/ranger) (terminal file manager)
 
 ```bash
-pip install git+https://github.com/politeauthority/docker-pretty-ps.git#egg=docker-pretty-ps --upgrade
-pip install ranger-fm
+pip install pipx
+pipx install git+https://github.com/politeauthority/docker-pretty-ps.git#egg=docker-pretty-ps
+pipx install ranger-fm
 ```
 
 #### Cargo
