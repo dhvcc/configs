@@ -93,6 +93,11 @@ if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; the
     unset -f __init_nvm
   }
   for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
+
+  nvm_current_path=$(nvm which current);
+  nvm_current_path=$(dirname $nvm_current_path);
+  nvm_current_path=$(dirname $nvm_current_path);
+  export NODE_PATH="$nvm_current_path/lib/node_modules";
 fi
 
 # Add pem files to agent
