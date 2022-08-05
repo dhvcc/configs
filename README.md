@@ -19,9 +19,10 @@ You may want to add
 
 ## Configuration
 
-- Any additional rc stuff for `.zshrc` or `.bashrc` you can add into `.config/.private_aliases.sh`
-- `neofetch` can be turned off with `export NEOFETCH=0` (in something like `/etc/profile`)
+- Any additional rc stuff for `.zshrc` or `.bashrc` you can add into `.config/.rc_extend.sh`
 - Place a picture for neofetch into `.config/neofetch/resources/source.jpg`
+- `neofetch` can be turned off with `export NEOFETCH=0` (in something like `/etc/profile`)
+- you can override default neofetch settings with cli arguments set as `OVERRIDE_NEOFETCH_ARGUMENTS=` in `.config/.rc_extend.sh`
 
 ## Dependencies
 
