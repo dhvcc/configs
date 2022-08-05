@@ -43,7 +43,7 @@ eval "$(starship init zsh)"
 # RC files and functions #
 source ~/.config/.aliasrc.sh
 source ~/.config/.completionrc.sh
-if [ -f "$HOME/.config/.private_aliases.sh" ]; then source ~/.config/.private_aliases.sh; fi
+if [ -f "$HOME/.config/.rc_extend.sh" ]; then source ~/.config/.rc_extend.sh; fi
 
 clipp() {
   output="$(poetry env info)"
@@ -103,7 +103,7 @@ fi
 # Add pem files to agent
 ls "$HOME/.ssh/pem" | xargs -i ssh-add "$HOME/.ssh/pem/"{} >/dev/null 2>&1
 
-[ ! "$NEOFETCH" = "0" ] && neofetch
+[ ! "$NEOFETCH" = "0" ] && sh -c "neofetch $OVERRIDE_NEOFETCH_ARGUMENTS"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
