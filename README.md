@@ -13,7 +13,7 @@ curl -Lks https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh
 ```
 
 You may want to add
-`0 0 * * * config pull --rebase` as a cron job (`crontab -e`)
+`0 0 * * * cfg pull --rebase` as a cron job (`crontab -e`)
 
 **Warning**, Bash configs are outdated
 
