@@ -33,7 +33,7 @@ Dependencies and software on ubuntu
 ```bash
 sudo apt-get install -y htop xclip zsh kitty make vim \
        python3-dev python3-pip python3-venv \
-       libpq-dev
+       libpq-dev libsqlite3-dev
 ```
 
 GNOME setup
@@ -55,6 +55,10 @@ gsettings reset org.gnome.desktop.input-sources xkb-options # allow to Alt+Shift
     ```
 
 - [nvm](https://github.com/nvm-sh/nvm)
+
+    ```bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+    ```
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts) (Hack Nerd Font Mono)
 
     ```bash
@@ -63,18 +67,22 @@ gsettings reset org.gnome.desktop.input-sources xkb-options # allow to Alt+Shift
     sudo fc-cache -f -v
     ```
 
-- [mon2cam](https://github.com/ShayBox/Mon2Cam) (for dual-monitor linux setup)
-- [matter](https://github.com/mateosss/matter) (theme GRUB)
-
-### VIM
+### VIM / NEOVIM
 
 - [nvim](https://github.com/neovim/neovim)
 - [vim-plug](https://github.com/junegunn/vim-plug)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 
 ```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+# Ubuntu install v0.7.2 from github
+sudo curl -sL -o /var/cache/apt/archives/nvim-linux64.deb  https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.deb && sudo dpkg -i /var/cache/apt/archives/nvim-linux64.deb
+
+python -m venv ~/.vim/.venv
+~/.vim/.venv/bin/pip install pynvim pyright 
+npm i -g neovim
+
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim -c ':PlugInstall | :qall'
 ```
 
 ### Shell
@@ -82,13 +90,16 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 #### Pip
 
 - [pipx](https://github.com/pypa/pipx)
+- [poetry](https://github.com/python-poetry/poetry)
 - [docker-pretty-ps](https://github.com/politeauthority/docker-pretty-ps) (pretty print `docker ps`)
 - [ranger](https://github.com/ranger/ranger) (terminal file manager)
+
 
 ```bash
 pip install pipx
 pipx install git+https://github.com/politeauthority/docker-pretty-ps.git#egg=docker-pretty-ps
 pipx install ranger-fm
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 ```
 
 #### Cargo
@@ -122,10 +133,12 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 - [zsh-completions](https://github.com/zsh-users/zsh-completions)
 
 ```bash
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+
 # poetry completion
 mkdir $ZSH_CUSTOM/plugins/poetry
 poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
@@ -134,18 +147,6 @@ poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
 ### Terminal
 
 - [kitty](https://github.com/kovidgoyal/kitty) (fast and feature-rich terminal emulator)
-
-    ```bash
-    curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-    # Place the kitty.desktop file somewhere it can be found by the OS
-    cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
-    # Update the path to the kitty icon in the kitty.desktop file
-    sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty.desktop
-    # Link
-    ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
-    # or sudo to /usr/bin
-    ```
-
 - [kitty-themes](https://github.com/dexpota/kitty-themes) (Broadcast)
 
     ```bash
@@ -154,5 +155,3 @@ poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
     cd ~/.config/kitty
     ln -s ./kitty-themes/themes/$THEME.conf ~/.config/kitty/theme.conf
     ```
-
-- [nautilus-terminal](https://github.com/flozz/nautilus-terminal#ubuntu-2004-and-later)
