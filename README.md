@@ -31,7 +31,7 @@ You may want to add
 Dependencies and software on ubuntu
 
 ```bash
-sudo apt-get install -y htop xclip zsh kitty make vim \
+sudo apt-get install -y htop xclip make vim \
        python3-dev python3-pip python3-venv \
        libpq-dev libsqlite3-dev
 ```
@@ -115,24 +115,17 @@ cargo install ripgrep lsd bat
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 ```
 
-#### Manual install
-
-- [fzf](https://github.com/junegunn/fzf) (`Ctrl+R` shell history search)
-
-    ```bash
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
-    ```
-
-- [htop](https://github.com/htop-dev/htop/) (better `top`)
-
 ### ZSH
 
 - [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) (`zsh` config framework)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 - [zsh-completions](https://github.com/zsh-users/zsh-completions)
+- [fzf](https://github.com/junegunn/fzf) (`Ctrl+R` shell history search)
 
 ```bash
+sudo apt install zsh
+
 KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -142,11 +135,16 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 # poetry completion
 mkdir $ZSH_CUSTOM/plugins/poetry
 poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
+
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --all
 ```
 
 ### Terminal
 
 - [kitty](https://github.com/kovidgoyal/kitty) (fast and feature-rich terminal emulator)
+  ```bash
+  sudo apt install kitty
+  ```
 - [kitty-themes](https://github.com/dexpota/kitty-themes) (Broadcast)
 
     ```bash
