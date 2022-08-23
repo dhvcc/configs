@@ -42,10 +42,10 @@ GNOME setup
 # Install usefull software
 sudo apt-get install -y gnome-tweaks gnome-shell-extension-manager dconf-editor
 # Change layout on Alt+Shift
-sudo echo gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "['<Alt>Shift_L']" >> /etc/profile
 gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top true # show app button on the top/left
 gsettings set org.gnome.desktop.default-applications.terminal exec kitty # set kitty as default terminal
 gsettings reset org.gnome.desktop.input-sources xkb-options # allow to Alt+Shift+Tab to Alt+Tab backwards
+gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "['<Alt>Shift_L']" >> /etc/profile
 ```
 
 - [pyenv](https://github.com/pyenv/pyenv-installer)
@@ -53,12 +53,10 @@ gsettings reset org.gnome.desktop.input-sources xkb-options # allow to Alt+Shift
     ```bash
     curl https://pyenv.run | bash
     ```
-
-- [nvm](https://github.com/nvm-sh/nvm)
-
-    ```bash
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-    ```
+- [fnm](https://github.com/Schniz/fnm)
+  ```bash
+  curl -fsSL https://fnm.vercel.app/install | bash
+  ```
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts) (Hack Nerd Font Mono)
 
     ```bash
@@ -78,9 +76,8 @@ gsettings reset org.gnome.desktop.input-sources xkb-options # allow to Alt+Shift
 sudo curl -sL -o /var/cache/apt/archives/nvim-linux64.deb  https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.deb && sudo dpkg -i /var/cache/apt/archives/nvim-linux64.deb
 
 python -m venv ~/.vim/.venv
-~/.vim/.venv/bin/pip install pynvim pyright 
+~/.vim/.venv/bin/pip install pynvim pyright
 npm i -g neovim
-
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim -c ':PlugInstall | :qall'
 ```
