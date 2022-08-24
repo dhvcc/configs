@@ -52,15 +52,7 @@ eval "$(pyenv init --path --no-rehash)"
 
 # fnm
 path+=($HOME/.fnm)
-#eval "$(fnm env)"
-
-##########################
-# RC files and functions #
-source ~/.config/.aliasrc.sh
-source ~/.config/.completionrc.sh
-if [ -f "$HOME/.config/.rc_extend.sh" ]; then source ~/.config/.rc_extend.sh; fi
-#                        #
-##########################
+eval "$(fnm env)"
 
 #############
 # Oh-my-zsh #
@@ -72,7 +64,16 @@ source $ZSH/oh-my-zsh.sh
 fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
 #            #
-##############
+#############
+
+##########################
+# RC files and functions #
+source ~/.config/.aliasrc.sh
+source ~/.config/.completionrc.sh
+if [ -f "$HOME/.config/.rc_extend.sh" ]; then source ~/.config/.rc_extend.sh; fi
+#                        #
+##########################
+
 
 [ ! "$NEOFETCH" = "0" ] && sh -c "neofetch $OVERRIDE_NEOFETCH_ARGUMENTS"
 

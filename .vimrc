@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'mechatroner/rainbow_csv'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'editorconfig/editorconfig-vim' " editorconfig support
-Plug 'dhvcc/nord-vim' " Theme
+Plug 'dhvcc/nord-mint-vim' " Theme
 Plug 'wakatime/vim-wakatime' " Time tracking
 Plug 'vim-scripts/ShowTrailingWhitespace' " Trailing whitespace highlight
 Plug 'vim-airline/vim-airline' " Statusline
