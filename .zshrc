@@ -52,7 +52,7 @@ eval "$(pyenv init --path --no-rehash)"
 
 # fnm
 path+=($HOME/.fnm)
-eval "$(fnm env)"
+#eval "$(fnm env)"
 
 ##########################
 # RC files and functions #
@@ -75,3 +75,4 @@ autoload -U compinit && compinit
 ##############
 
 [ ! "$NEOFETCH" = "0" ] && sh -c "neofetch $OVERRIDE_NEOFETCH_ARGUMENTS"
+
