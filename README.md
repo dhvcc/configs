@@ -57,6 +57,8 @@ gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "['<
 - [fnm](https://github.com/Schniz/fnm)
   ```bash
   curl -fsSL https://fnm.vercel.app/install | bash
+  # Might also want to install current lts version
+  fnm install 16
   ```
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts) (Hack Nerd Font Mono)
 
@@ -91,14 +93,20 @@ vim -c ':PlugInstall | :qall'
 - [poetry](https://github.com/python-poetry/poetry)
 - [docker-pretty-ps](https://github.com/politeauthority/docker-pretty-ps) (pretty print `docker ps`)
 - [ranger](https://github.com/ranger/ranger) (terminal file manager)
+- [ipython](https://github.com/ipython/ipython) (better python REPL)
 
 
 ```bash
 pip install pipx
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 pipx install git+https://github.com/politeauthority/docker-pretty-ps.git#egg=docker-pretty-ps
 pipx install ranger-fm
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+pipx install ipython
 ```
+
+**You may want to also automatically update pipx-installed utils**
+Updates all utils every 10 days
+`0 */240 * * * pipx upgrade-all` as a cron job (`crontab -e`)
 
 #### Cargo
 
