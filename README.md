@@ -19,10 +19,11 @@ You may want to add
 
 ## Configuration
 
-- Any additional rc stuff for `.zshrc` or `.bashrc` you can add into `.config/.rc_extend.sh`
-- Place a picture for neofetch into `.config/neofetch/resources/source.jpg`
-- `neofetch` can be turned off with `export NEOFETCH=0` (in something like `/etc/profile`)
-- you can override default neofetch settings with cli arguments set as `OVERRIDE_NEOFETCH_ARGUMENTS=` in `.config/.rc_extend.sh`
+- Any additional rc stuff for your `.zshrc` you can add into `.config/.rc_extend.sh`
+
+### Neofetch
+- `neofetch` can be turned off with `NEOFETCH=0` (in something like `.config/.rc_extend.sh`)
+- you can override default neofetch settings with your own theme. Just add `export NEOFETCH_THEME=name_of_your_theme` to `.rc_extend.sh` and add your settings into `~/.config/neofetch/themes/name_of_your_theme.sh` file
 
 ## Dependencies
 
