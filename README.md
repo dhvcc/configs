@@ -1,8 +1,8 @@
 # Configs
 
-Basic showcase (neofetch is customized in this picture, `dhvcc` theme used)
+Basic showcase (neofetch is customized in this picture, `mint` theme used)
 
-![desktop](https://user-images.githubusercontent.com/18076967/179727974-d9bdf501-f911-4ff7-9bc3-8021d7f096ec.png)
+![desktop](https://user-images.githubusercontent.com/18076967/186787936-8ff80282-5e4e-4643-b1cd-4f3ac0a6d140.png)
 
 ## Install
 
