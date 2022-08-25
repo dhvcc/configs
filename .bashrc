@@ -1,40 +1,65 @@
-plugins=git
+plugins=(
+  git
+  ansible
+  pyenv
+  npm
+)
+
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
+export VISUAL=nvim
+export EDITOR=nvim
+export PATH="$HOME/.local/bin:$HOME/go:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/.poetry/bin:$PATH"
+
+# Util configs
+export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden'
+export BAT_THEME="Nord"
+
+# Helper functions
+poetry-shell() {
+  . "$(poetry env info --path)/bin/activate"
+}
+clipp() {
+  output="$(poetry env info)"
+  if [ $? -eq 0 ]; then
+    echo -n "$(poetry env info --path)/bin/python" | clip
+    echo "Copied poetry python path to clipboard"
+  else
+    echo $output
+  fi
+}
+
+# Starship prompt initialization
+eval "$(starship init bash)"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path --no-rehash)"
+
+# fnm
+export PATH="$HOME/.fnm:$PATH"
+eval "$(fnm env)"
+
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 ##############
 # Oh-my-bash #
 if [[ -d $HOME/.oh-my-bash ]]; then
   export OSH=$HOME/.oh-my-bash
-  [ ! -d "$OSH/themes/dhvcc" ] && mkdir $OSH/themes/dhvcc && ln -sf $HOME/.dhvcc.bash-theme $OSH/themes/dhvcc/dhvcc.theme.sh
-  OSH_THEME="dhvcc"
   source $OSH/oh-my-bash.sh
 fi
 #            #
 ##############
 
-[ -f ~/.config/.aliasrc.sh ] && source ~/.config/.aliasrc.sh
-[ -f ~/.config/.completionrc.sh ] && source ~/.config/.completionrc.sh
+##########################
+# RC files and functions #
+source ~/.config/.aliasrc.sh
+source ~/.config/.completionrc.sh
+if [ -f "$HOME/.config/.rc_extend.sh" ]; then source ~/.config/.rc_extend.sh; fi
+#                        #
+##########################
 
-[ -f ~/.private_aliases.bash ] && source ~/.private_aliases.bash
+[ ! "$NEOFETCH" = "0" ] && sh -c "neofetch $OVERRIDE_NEOFETCH_ARGUMENTS"
 
-# FZF
-
-# Enable pyenv
-pyenv=$(command -v pyenv)
-if [[ -n $pyenv ]]; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
-fi
-
-# NVM config
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-
-# Install icon font for lsd
-# git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1
-# cd nerd_fonts/
-# ./install.sh Hack
-
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash

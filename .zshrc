@@ -3,12 +3,25 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   fzf
+
   git
   docker
   docker-compose
-  fnm
+  ansible
+
+  python
+  pip
   pyenv
   poetry
+
+  ruby
+  gem
+
+  node
+  npm
+  fnm
+
+  rust
 )
 
 export HISTSIZE=1000000
@@ -16,7 +29,7 @@ export HISTFILESIZE=1000000
 export VISUAL=nvim
 export EDITOR=nvim
 path+=(
-  $HOME/.local/bin,
+  $HOME/.local/bin
   $HOME/go
   $HOME/go/bin
   $HOME/.cargo/bin
@@ -73,7 +86,6 @@ source ~/.config/.completionrc.sh
 if [ -f "$HOME/.config/.rc_extend.sh" ]; then source ~/.config/.rc_extend.sh; fi
 #                        #
 ##########################
-
 
 [ ! "$NEOFETCH" = "0" ] && sh -c "neofetch $OVERRIDE_NEOFETCH_ARGUMENTS"
 

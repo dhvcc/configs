@@ -1,12 +1,12 @@
 # Configs
 
-Basic showcase
+Basic showcase (neofetch is customized in this picture, `dhvcc` theme used)
 
 ![desktop](https://user-images.githubusercontent.com/18076967/179727974-d9bdf501-f911-4ff7-9bc3-8021d7f096ec.png)
 
 ## Install
 
-Before installing, remove `.bashrc` or `.zshrc` which may conflict with the ones being pulled from this repo. Before retrying, remove `"$HOME"/.cfg` directory
+While installing, some files may conflict with the ones being pulled from this repo. Before retrying, remove `"$HOME"/.cfg` directory
 
 ```shell
 curl -Lks https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh | /bin/sh
@@ -15,7 +15,7 @@ curl -Lks https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh
 You may want to add
 `0 0 * * * cfg pull --rebase` as a cron job (`crontab -e`)
 
-**Warning**, Bash configs are outdated
+**Warning**, Bash configs may be outdated, use `zsh` as your default
 
 ## Configuration
 
@@ -32,7 +32,7 @@ You may want to add
 Dependencies and software on ubuntu
 
 ```bash
-sudo apt-get install -y htop xclip make vim \
+sudo apt-get install -y htop xclip make vim curl \
        python3-dev python3-pip python3-venv \
        libpq-dev libsqlite3-dev
 ```
@@ -49,11 +49,12 @@ gsettings reset org.gnome.desktop.input-sources xkb-options # allow to Alt+Shift
 gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "['<Alt>Shift_L']" >> /etc/profile
 ```
 
-- [pyenv](https://github.com/pyenv/pyenv-installer)
+Software
 
-    ```bash
-    curl https://pyenv.run | bash
-    ```
+- [pyenv](https://github.com/pyenv/pyenv-installer)
+  ```bash
+  curl https://pyenv.run | bash
+  ```
 - [fnm](https://github.com/Schniz/fnm)
   ```bash
   curl -fsSL https://fnm.vercel.app/install | bash
@@ -61,12 +62,15 @@ gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "['<
   fnm install 16
   ```
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts) (Hack Nerd Font Mono)
-
-    ```bash
-    sudo mkdir -p /usr/share/fonts/hack
-    cd /usr/share/fonts/hack && sudo curl -fLo "Hack Regular Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
-    sudo fc-cache -f -v
-    ```
+  ```bash
+  sudo mkdir -p /usr/share/fonts/hack
+  cd /usr/share/fonts/hack && sudo curl -fLo "Hack Regular Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
+  sudo fc-cache -f -v
+  ```
+- [fzf](https://github.com/junegunn/fzf) (used for shell/ipython history search, vim/ranger file search, but can also be used fore many more things)
+  ```bash
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --all
+  ```
 
 ### VIM / NEOVIM
 
@@ -121,15 +125,18 @@ cargo install ripgrep lsd bat
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 ```
 
-### ZSH
+### Shell
 
+- [oh-my-bash](https://github.com/ohmybash/oh-my-bash) (install for consistency when you'll have to use bash, but use zsh as default)
 - [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) (`zsh` config framework)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 - [zsh-completions](https://github.com/zsh-users/zsh-completions)
-- [fzf](https://github.com/junegunn/fzf) (`Ctrl+R` shell history search)
 
 ```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+mv ~/.bashrc.omb-backup ~/.bashrc
+
 sudo apt install zsh
 
 KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -141,8 +148,6 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 # poetry completion
 mkdir $ZSH_CUSTOM/plugins/poetry
 poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
-
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --all
 ```
 
 ### Terminal
