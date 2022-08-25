@@ -50,8 +50,11 @@ def _load_pygments_objects():
     except pygments.lexers.ClassNotFound:
         _PYGMENTS_LEXER = pygments.lexers.get_lexer_by_name('python3')
     try:
-        _PYGMENTS_STYLE = pygments.styles.get_style_by_name('solarized-dark')
-    except pygments.styles.ClassNotFound:
+        # Add current dir to path
+        sys.path.append(os.path.dirname(__file__))
+        from pygments_nord_style import Nord
+        _PYGMENTS_STYLE = Nord
+    except ImportError as e:
         _PYGMENTS_STYLE = pygments.styles.get_style_by_name('default')
     try:
         _PYGMENTS_FORMATTER = pygments.formatters.get_formatter_by_name(
@@ -117,7 +120,7 @@ def _decode_from_selection(code: str) -> str:
 
 def _send_entry_to_fzf(entry: HistoryEntry, fzf):
     code = _encode_to_selection(entry[1])
-    line = '{:%Y-%m-%d %H:%M:%S} | {}\n'.format(entry[0], code).encode('utf-8')
+    line = '{:%y-%m-%d} {}\n'.format(entry[0], code).encode('utf-8')
     try:
         fzf.stdin.write(line)
     except IOError as e:
