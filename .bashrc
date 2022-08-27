@@ -39,7 +39,7 @@ eval "$(pyenv init --path --no-rehash)"
 
 # fnm
 export PATH="$HOME/.fnm:$PATH"
-eval "$(fnm env)"
+eval "$(fnm env --use-on-cd 2> /dev/null)"
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -61,5 +61,5 @@ if [ -f "$HOME/.config/.rc_extend.sh" ]; then source ~/.config/.rc_extend.sh; fi
 #                        #
 ##########################
 
-[ ! "$NEOFETCH" = "0" ] && sh -c "neofetch $OVERRIDE_NEOFETCH_ARGUMENTS"
+[ ! "$NEOFETCH" = "0" ] && neofetch
 

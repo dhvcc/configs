@@ -1,5 +1,4 @@
 plugins=(
-  zsh-completions
   zsh-autosuggestions
   zsh-syntax-highlighting
   fzf
@@ -14,12 +13,8 @@ plugins=(
   pyenv
   poetry
 
-  ruby
-  gem
-
   node
   npm
-  fnm
 
   rust
 )
@@ -65,17 +60,15 @@ eval "$(pyenv init --path --no-rehash)"
 
 # fnm
 path+=($HOME/.fnm)
-eval "$(fnm env)"
+eval "$(fnm env --use-on-cd 2> /dev/null)"
 
 #############
 # Oh-my-zsh #
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#d1d1d1,bg=#525252"
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
-# Completion
-fpath=(~/.zsh/completions $fpath)
-autoload -U compinit && compinit
 #            #
 #############
 
@@ -87,5 +80,5 @@ if [ -f "$HOME/.config/.rc_extend.sh" ]; then source ~/.config/.rc_extend.sh; fi
 #                        #
 ##########################
 
-[ ! "$NEOFETCH" = "0" ] && sh -c "neofetch $OVERRIDE_NEOFETCH_ARGUMENTS"
+[ ! "$NEOFETCH" = "0" ] && neofetch
 
