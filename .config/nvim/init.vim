@@ -5,3 +5,6 @@ call plug#begin('~/.vim/plugged')
 source ~/.vim/plugins.vim
 call plug#end()
 source ~/.vimrc
+source ~/.vim/coc.vim
+
+colorscheme nord

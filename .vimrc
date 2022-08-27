@@ -1,11 +1,9 @@
-" TODO: fix renamer and comments
+" TODO: fix comments
 
-""""""""""
-" Basics "
-colorscheme nord
+" Escape with jk in insert mode
+inoremap jk <ESC>
+
 set scrolloff=5
-"
-" Relative number
 set number relativenumber
 
 set smarttab
@@ -18,46 +16,46 @@ set expandtab
 " Show trailing spaces
 set list
 set listchars+=trail:◦
-"        "
-""""""""""
 
+"""""""""""""""""
+" Splits & tabs "
+" Resize splits with Alt+J/K
+noremap <A-k> :vertical resize +5<CR>
+noremap <A-j> :vertical resize -5<CR>
+
+" Tabs like in chrome with vimium
+noremap <C-j> :tabprevious<CR>
+noremap <C-k> :tabnext<CR>
+noremap <C-t> :tabnew<CR>
+
+" Move splits with Ctrl instead of Ctrl+W
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+" Splits & tabs "
+"""""""""""""""""
+
+" EASYMOTION
 " f is single-char, F is double-char bidirectional motion search
 map f <Plug>(easymotion-s)
 map F <Plug>(easymotion-s2)
 
-" Renamer Alt+F2
-inoremap <silent> <F2> <cmd>lua require('renamer').rename()<cr>
-nnoremap <silent> <leader>rn <cmd>lua require('renamer').rename()<cr>
-vnoremap <silent> <leader>rn <cmd>lua require('renamer').rename()<cr>
+" RENAMER F2 or \rn
+nmap <leader>rn <Plug>(coc-rename)
+nmap <F2> <Plug>(coc-rename)
 
 " FZF
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 nmap <C-P> :Files<CR>
 
-" Ctrl+B toogle tree
-inoremap jk <ESC>
-nmap <C-B> :NERDTreeToggle<CR>
+""""""""""""
+" NerdTree "
 " Comment lines with Ctrl+/
 filetype plugin on
 nmap <C-_> <plug>NERDCommenterToggle
 
-let g:loaded_python_provider = 0
-let g:loaded_ruby_provider = 0
-let g:python3_host_prog = $HOME."/.vim/.venv/bin/python3"
+" Ctrl+B toogle tree
+nmap <C-B> :NERDTreeToggle<CR>
 
-" Move splits with Ctrl instead of Ctrl+W
-noremap <A-k> :vertical resize +5<CR>
-noremap <A-j> :vertical resize -5<CR>
-
-noremap <C-j> :tabprevious<CR>
-noremap <C-k> :tabnext<CR>
-noremap <C-t> :tabnew<CR>
-
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-""""""""""""
-" NerdTree "
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowHidden=1
 let g:NERDTreeGitStatusWithFlags = 1
@@ -82,7 +80,6 @@ let g:NERDTreeIgnore = ['^node_modules$', '^venv$', '^.venv$', '^__pycache__$', 
 """"""""""""""""""""""""
 " transparency + KiTTY "
 " https://github.com/kovidgoyal/kitty/issues/108
-
 let &t_ut=''
 set background=dark
 
@@ -96,76 +93,4 @@ if (empty($TMUX))
 endif
 "                      "
 """"""""""""""""""""""""
-
-
-"""""""
-" coc "
-let g:coc_global_extensions = [
-  \ 'coc-snippets',
-  \ 'coc-pairs',
-  \ 'coc-tsserver',
-  \ 'coc-pyright',
-  \ 'coc-eslint',
-  \ 'coc-prettier',
-  \ 'coc-json',
-  \ '@yaegassy/coc-ansible',
-  \ ]
-" Set ansible filetypes for certain files
-au BufRead,BufNewFile */ansible/*.yml,*.yaml set ft=yaml.ansible
-au BufRead,BufNewFile playbook.yml,*.yaml set ft=yaml.ansible
-" Set filetype map
-let g:coc_filetype_map = {
-  \ 'yaml.ansible': 'ansible',
-  \ }
-" if hidden is not set, TextEdit might fail.
-set hidden " Some servers have issues with backup files, see #649 set nobackup set nowritebackup " Better display for messages set cmdheight=2 " You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
-"     "
-"""""""
-
-" don't give |ins-completion-menu| messages.
-set shortmess+=c
-" always show signcolumns
-set signcolumn=yes
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use Shift+K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
 

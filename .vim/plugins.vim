@@ -5,9 +5,6 @@ Plug 'editorconfig/editorconfig-vim' " editorconfig support
 Plug 'dhvcc/nord-mint-vim' " Theme
 Plug 'vim-scripts/ShowTrailingWhitespace' " Trailing whitespace highlight
 Plug 'vim-airline/vim-airline' " Statusline
-"" Renamer
-Plug 'nvim-lua/plenary.nvim'
-Plug 'filipdutescu/renamer.nvim', { 'branch': 'master' }
 " Character jumping
 Plug 'easymotion/vim-easymotion'
 " Language support
