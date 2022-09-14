@@ -36,20 +36,6 @@ path+=(
 export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden'
 export BAT_THEME="Nord"
 
-# Helper functions
-poetry-shell() {
-  . "$(poetry env info --path)/bin/activate"
-}
-clipp() {
-  output="$(poetry env info)"
-  if [ $? -eq 0 ]; then
-    echo -n "$(poetry env info --path)/bin/python" | clip
-    echo "Copied poetry python path to clipboard"
-  else
-    echo $output
-  fi
-}
-
 # Starship prompt initialization
 eval "$(starship init zsh)"
 
@@ -60,7 +46,11 @@ eval "$(pyenv init --path --no-rehash)"
 
 # fnm
 path+=($HOME/.fnm)
-eval "$(fnm env --use-on-cd 2> /dev/null)"
+eval "$(fnm env --use-on-cd --shell=zsh)"
+
+# pnpm
+export PNPM_HOME="/home/dhvcc/.local/share/pnpm"
+path+=($PNPM_HOME)
 
 #############
 # Oh-my-zsh #
@@ -77,6 +67,20 @@ source $ZSH/oh-my-zsh.sh
 source ~/.config/.aliasrc.sh
 source ~/.config/.completionrc.sh
 if [ -f "$HOME/.config/.rc_extend.sh" ]; then source ~/.config/.rc_extend.sh; fi
+
+# Helper functions
+poetry-shell() {
+  . "$(poetry env info --path)/bin/activate"
+}
+clipp() {
+  output="$(poetry env info)"
+  if [ $? -eq 0 ]; then
+    echo -n "$(poetry env info --path)/bin/python" | clip
+    echo "Copied poetry python path to clipboard"
+  else
+    echo $output
+  fi
+}
 #                        #
 ##########################
 

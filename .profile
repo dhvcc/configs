@@ -38,3 +38,7 @@ export PATH="$HOME/.poetry/bin:$PATH"
 
 # Add fnm aliases, so it can work with GUI apps
 export PATH="$HOME/.fnm/aliases/default/bin:$PATH"
+
+
+# Added by Toolbox App
+export PATH="$PATH:/home/dhvcc/.local/share/JetBrains/Toolbox/scripts"

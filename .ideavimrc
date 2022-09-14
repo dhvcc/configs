@@ -6,3 +6,4 @@ set incsearch
 
 " Find more examples here: https://jb.gg/share-ideavimrc
 set keymodel+=startsel
+set ideajoin
