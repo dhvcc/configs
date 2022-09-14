@@ -39,7 +39,7 @@ eval "$(pyenv init --path --no-rehash)"
 
 # fnm
 export PATH="$HOME/.fnm:$PATH"
-eval "$(fnm env --use-on-cd 2> /dev/null)"
+eval "$(fnm env --shell=bash --use-on-cd)"
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
