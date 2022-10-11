@@ -71,6 +71,12 @@ Software
   ```bash
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --all
   ```
+- [btop](https://github.com/aristocratos/btop) (fancier htop)
+- [ctop](https://github.com/bcicen/ctop) (docker monitoring tool)
+  ```bash
+  sudo wget https://github.com/bcicen/ctop/releases/download/v0.7.7/ctop-0.7.7-linux-amd64 -O /usr/local/bin/ctop
+sudo chmod +x /usr/local/bin/ctop
+  ```
 
 ### VIM / NEOVIM
 
@@ -95,6 +101,7 @@ vim -c ':PlugInstall | :qall'
 
 - [pipx](https://github.com/pypa/pipx)
 - [poetry](https://github.com/python-poetry/poetry)
+- [ansible](https://github.com/ansible/ansible)
 - [docker-pretty-ps](https://github.com/politeauthority/docker-pretty-ps) (pretty print `docker ps`)
 - [ranger](https://github.com/ranger/ranger) (terminal file manager)
 - [ipython](https://github.com/ipython/ipython) (better python REPL)
@@ -102,15 +109,16 @@ vim -c ':PlugInstall | :qall'
 
 ```bash
 pip install pipx
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+pipx install poetry --include-deps
+pipx install ansible --include-deps
 pipx install git+https://github.com/politeauthority/docker-pretty-ps.git#egg=docker-pretty-ps
-pipx install ranger-fm
-pipx install ipython
+pipx install ranger-fm --include-deps
+pipx install ipython --include-deps
 ```
 
 **You may want to also automatically update pipx-installed utils**
-Updates all utils every 10 days
-`0 */240 * * * pipx upgrade-all` as a cron job (`crontab -e`)
+Updates all utils every week
+`0 0 * * 0 pipx upgrade-all` as a cron job (`crontab -e`)
 
 #### Cargo
 
@@ -120,7 +128,7 @@ Updates all utils every 10 days
 - [starship](https://starship.rs/) (shell prompt)
 
 ```bash
-cargo install ripgrep lsd bat
+cargo install ripgrep lsd bat fd
 # Starship cargo install is super slow
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 ```
