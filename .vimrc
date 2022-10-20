@@ -34,11 +34,6 @@ nnoremap <C-H> <C-W><C-H>
 " Splits & tabs "
 """""""""""""""""
 
-" EASYMOTION
-" f is single-char, F is double-char bidirectional motion search
-map f <Plug>(easymotion-s)
-map F <Plug>(easymotion-s2)
-
 " RENAMER F2 or \rn
 nmap <leader>rn <Plug>(coc-rename)
 nmap <F2> <Plug>(coc-rename)
