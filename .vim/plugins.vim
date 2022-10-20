@@ -29,4 +29,3 @@ Plug 'junegunn/fzf.vim'
 if !empty(glob("~/.wakatime.cfg"))
   Plug 'wakatime/vim-wakatime' " Time tracking
 endif
-

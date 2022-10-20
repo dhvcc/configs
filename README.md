@@ -75,8 +75,9 @@ Software
 - [ctop](https://github.com/bcicen/ctop) (docker monitoring tool)
   ```bash
   sudo wget https://github.com/bcicen/ctop/releases/download/v0.7.7/ctop-0.7.7-linux-amd64 -O /usr/local/bin/ctop
-sudo chmod +x /usr/local/bin/ctop
+  sudo chmod +x /usr/local/bin/ctop
   ```
+- [thinkfan](https://github.com/vmatare/thinkfan) (utility to control fan speeds of your ThinkPad)
 
 ### VIM / NEOVIM
 
@@ -114,6 +115,12 @@ pipx install ansible --include-deps
 pipx install git+https://github.com/politeauthority/docker-pretty-ps.git#egg=docker-pretty-ps
 pipx install ranger-fm --include-deps
 pipx install ipython --include-deps
+```
+
+**Ranger also needs to install [devicons](https://github.com/alexanderjeurissen/ranger_devicons)**
+
+```bash
+git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 ```
 
 **You may want to also automatically update pipx-installed utils**
