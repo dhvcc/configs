@@ -2,6 +2,8 @@
 
 Basic showcase (neofetch is customized in this picture, `mint` theme used)
 
+For GNOME desktop setup see [this repo](https://github.com/dhvcc/desktop).
+
 ![desktop](https://user-images.githubusercontent.com/18076967/186787936-8ff80282-5e4e-4643-b1cd-4f3ac0a6d140.png)
 
 ## Install
@@ -35,18 +37,6 @@ Dependencies and software on ubuntu
 sudo apt-get install -y htop xclip make vim curl \
        python3-dev python3-pip python3-venv \
        libpq-dev libsqlite3-dev
-```
-
-GNOME setup
-
-```bash
-# Install usefull software
-sudo apt-get install -y gnome-tweaks gnome-shell-extension-manager dconf-editor
-# Change layout on Alt+Shift
-gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top true # show app button on the top/left
-gsettings set org.gnome.desktop.default-applications.terminal exec kitty # set kitty as default terminal
-gsettings reset org.gnome.desktop.input-sources xkb-options # allow to Alt+Shift+Tab to Alt+Tab backwards
-gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "['<Alt>Shift_L']" >> /etc/profile
 ```
 
 Software
