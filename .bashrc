@@ -38,7 +38,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path --no-rehash)"
 
 # fnm
-export PATH="$HOME/.fnm:$PATH"
+export PATH="$HOME/.local/share/fnm:$PATH"
 eval "$(fnm env --shell=bash --use-on-cd)"
 
 # fzf

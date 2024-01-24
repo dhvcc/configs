@@ -45,7 +45,7 @@ path+=($PYENV_ROOT/bin)
 eval "$(pyenv init --path --no-rehash)"
 
 # fnm
-path+=($HOME/.fnm)
+path+=($HOME/.local/share/fnm)
 eval "$(fnm env --use-on-cd --shell=zsh)"
 
 # pnpm
@@ -84,5 +84,6 @@ clipp() {
 #                        #
 ##########################
 
+bindkey -e  # Disable VI mode
 [ ! "$NEOFETCH" = "0" ] && neofetch
 
