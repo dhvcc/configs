@@ -37,6 +37,12 @@ Dependencies and software on ubuntu
 sudo apt-get install -y htop xclip make vim curl \
        python3-dev python3-pip python3-venv \
        libpq-dev libsqlite3-dev
+sudo apt install zsh cargo
+wget https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd-musl_1.0.0_amd64.deb && sudo dpkg -i lsd-musl_1.0.0_amd64.dev && rm lsd-musl_1.0.0_amd64.deb
+sudo apt-get insatll -y neofetch unzip bat lsd fd-find ripgrep
+ln -s $(which fdfind) ~/.local/bin/fd
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
 ```
 
 Software
@@ -48,7 +54,6 @@ Software
 - [fnm](https://github.com/Schniz/fnm)
   ```bash
   curl -fsSL https://fnm.vercel.app/install | bash
-  # Might also want to install current lts version
   fnm install 16
   ```
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts) (Hack Nerd Font Mono)
@@ -75,8 +80,9 @@ Software
 - [vim-plug](https://github.com/junegunn/vim-plug)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 
+#### Ubuntu install v0.7.2 from github
+
 ```bash
-# Ubuntu install v0.7.2 from github
 sudo curl -sL -o /var/cache/apt/archives/nvim-linux64.deb  https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.deb && sudo dpkg -i /var/cache/apt/archives/nvim-linux64.deb
 
 python -m venv ~/.vim/.venv
@@ -94,7 +100,6 @@ vim -c ':PlugInstall | :qall'
 - [poetry](https://github.com/python-poetry/poetry)
 - [ansible](https://github.com/ansible/ansible)
 - [docker-pretty-ps](https://github.com/politeauthority/docker-pretty-ps) (pretty print `docker ps`)
-- [ranger](https://github.com/ranger/ranger) (terminal file manager)
 - [ipython](https://github.com/ipython/ipython) (better python REPL)
 
 
@@ -105,12 +110,6 @@ pipx install ansible --include-deps
 pipx install git+https://github.com/politeauthority/docker-pretty-ps.git#egg=docker-pretty-ps
 pipx install ranger-fm --include-deps
 pipx install ipython --include-deps
-```
-
-**Ranger also needs to install [devicons](https://github.com/alexanderjeurissen/ranger_devicons)**
-
-```bash
-git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 ```
 
 **You may want to also automatically update pipx-installed utils**
@@ -125,7 +124,6 @@ Updates all utils every week
 - [starship](https://starship.rs/) (shell prompt)
 
 ```bash
-cargo install ripgrep lsd bat fd
 # Starship cargo install is super slow
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 ```
@@ -142,13 +140,18 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 mv ~/.bashrc.omb-backup ~/.bashrc
 
-sudo apt install zsh
+exec zsh
 
 KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+exec zsh
+cfg checkout .
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+
+exec zsh
 
 # poetry completion
 mkdir $ZSH_CUSTOM/plugins/poetry
