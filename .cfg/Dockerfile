@@ -36,8 +36,6 @@ RUN pip install pipx && \
     pipx install poetry --include-deps && \
     pipx install ipython --include-deps
 
-COPY --from=docker:dind /usr/local/bin/docker /usr/local/bin/
-
 COPY .bashrc .zshrc ./
 RUN rm -rf .cfg
 
