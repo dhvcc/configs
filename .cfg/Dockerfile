@@ -25,9 +25,9 @@ RUN curl https://pyenv.run | bash
 RUN curl -fsSL https://fnm.vercel.app/install | bash && /bin/zsh -i -c 'fnm install 16'
 RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --all
 
-RUN ./.cfg/scripts/install-neovim.sh 
-RUN ./.cfg/scripts/install-omb.sh 
-RUN ./.cfg/scripts/install-omz.sh 
+RUN ./.cfg/scripts/install-neovim.sh
+RUN ./.cfg/scripts/install-omb.sh
+RUN ./.cfg/scripts/install-omz.sh
 RUN sh -c "$(curl -fsSL https://starship.rs/install.sh)" "" -f
 RUN pip install pipx && \
     pipx install ansible --include-deps && \
@@ -35,6 +35,8 @@ RUN pip install pipx && \
     pipx install ranger-fm --include-deps && \
     pipx install poetry --include-deps && \
     pipx install ipython --include-deps
+
+COPY --from=docker:dind /usr/local/bin/docker /usr/local/bin/
 
 COPY .bashrc .zshrc ./
 RUN rm -rf .cfg
