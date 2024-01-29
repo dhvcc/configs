@@ -48,10 +48,6 @@ eval "$(pyenv init --path --no-rehash)"
 path+=($HOME/.local/share/fnm)
 eval "$(fnm env --use-on-cd --shell=zsh)"
 
-# pnpm
-export PNPM_HOME="/home/dhvcc/.local/share/pnpm"
-path+=($PNPM_HOME)
-
 #############
 # Oh-my-zsh #
 export ZSH="$HOME/.oh-my-zsh"
