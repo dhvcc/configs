@@ -1,0 +1,115 @@
+---
+- name: Install dependencies and configure environment
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Update apt cache (Ubuntu)
+      apt:
+        update_cache: yes
+      when: ansible_os_family == 'Debian'
+
+    - name: Install essential packages (Ubuntu)
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - curl
+        - wget
+        - git
+        - gcc
+        - g++
+        - libffi-dev
+        - htop
+        - xclip
+        - make
+        - vim
+        - python3-dev
+        - python3-pip
+        - python3-venv
+        - libpq-dev
+        - libsqlite3-dev
+        - lzma-dev
+        - libreadline6-dev
+        - libbz2-dev
+        - cargo
+        - bash
+        - zsh
+        - neofetch
+        - unzip
+        - ripgrep
+      when: ansible_os_family == 'Debian'
+
+    - name: Update Homebrew (macOS)
+      homebrew:
+        state: latest
+      when: ansible_os_family == 'Darwin'
+
+    - name: Install essential packages (macOS)
+      homebrew:
+        name: "{{ item }}"
+      loop:
+        - curl
+        - wget
+        - git
+        - gcc
+        - libffi
+        - htop
+        - xclip
+        - make
+        - vim
+        - python
+        - postgresql
+        - sqlite
+        - xz
+        - readline
+        - bzip2
+        - cargo
+        - bash
+        - zsh
+        - neofetch
+        - unzip
+        - ripgrep
+      when: ansible_os_family == 'Darwin'
+
+    - name: Install fd-find (Ubuntu)
+      apt:
+        name: fd-find
+        state: present
+      when: ansible_os_family == 'Debian'
+
+    - name: Install fd-find (macOS)
+      homebrew:
+        name: fd
+      when: ansible_os_family == 'Darwin'
+
+    - name: Create symlink for fd
+      file:
+        src: "{{ ansible_playbook_dir }}/.local/bin/fd"
+        dest: "~/.local/bin/fd"
+        state: link
+
+    - name: Install bat (Ubuntu)
+      apt:
+        name: bat
+        state: present
+      when: ansible_os_family == 'Debian'
+
+    - name: Install bat (macOS)
+      homebrew:
+        name: bat
+      when: ansible_os_family == 'Darwin'
+
+    - name: Create symlink for bat
+      file:
+        src: "{{ ansible_playbook_dir }}/.local/bin/bat"
+        dest: "~/.local/bin/bat"
+        state: link
+
+    # Other tasks remain the same as in the previous playbook
+    # ...
+
+- name: Set default shell
+  hosts: localhost
+  tasks:
+    - name: Set default shell to zsh
+      shell: chsh -s /bin/zsh "{{ ansible_ssh_user }}"
