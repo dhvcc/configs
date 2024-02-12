@@ -1,15 +1,17 @@
 ---
 - name: Install dependencies and configure environment
   hosts: localhost
-  become: yes
-  gather_facts: true
+  become: no
+  gather_facts: yes
   tasks:
     - name: Update apt cache (Ubuntu)
+      become: yes
       apt:
         update_cache: yes
       when: ansible_os_family == 'Debian'
 
     - name: Install essential packages (Ubuntu)
+      become: yes
       apt:
         name: "{{ item }}"
         state: present
@@ -41,12 +43,12 @@
       when: ansible_os_family == 'Debian'
 
     - name: Update Homebrew (macOS)
+      become: yes
       homebrew:
         state: latest
       when: ansible_os_family == 'Darwin'
 
     - name: Install essential packages (macOS)
-      become: false
       #homebrew:
       #  name: "{{ item }}"
       ansible.builtin.command:
