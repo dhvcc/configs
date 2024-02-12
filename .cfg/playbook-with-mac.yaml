@@ -46,8 +46,10 @@
       when: ansible_os_family == 'Darwin'
 
     - name: Install essential packages (macOS)
-      homebrew:
-        name: "{{ item }}"
+      #homebrew:
+      #  name: "{{ item }}"
+      ansible.builtin.command:
+        cmd: brew install "{{ item }}"
       loop:
         - curl
 #        - wget
