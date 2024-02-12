@@ -46,6 +46,7 @@
       when: ansible_os_family == 'Darwin'
 
     - name: Install essential packages (macOS)
+      become: false
       #homebrew:
       #  name: "{{ item }}"
       ansible.builtin.command:
