@@ -1,6 +1,7 @@
 ---
 - name: Install dependencies and configure environment
   hosts: localhost
+  become: yes
   gather_facts: false
   tasks:
     - name: Update apt cache (Ubuntu)
@@ -82,34 +83,31 @@
         name: fd
       when: ansible_os_family == 'Darwin'
 
-    - name: Create symlink for fd
-      file:
-        src: "{{ ansible_playbook_dir }}/.local/bin/fd"
-        dest: "~/.local/bin/fd"
-        state: link
+#    - name: Create symlink for fd
+#      file:
+#        src: "{{ ansible_playbook_dir }}/.local/bin/fd"
+#        dest: "~/.local/bin/fd"
+#        state: link
+#
+#    - name: Install bat (Ubuntu)
+#      apt:
+#        name: bat
+#        state: present
+#      when: ansible_os_family == 'Debian'
+#
+#    - name: Install bat (macOS)
+#      homebrew:
+#        name: bat
+#      when: ansible_os_family == 'Darwin'
+#
+#    - name: Create symlink for bat
+#      file:
+#        src: "{{ ansible_playbook_dir }}/.local/bin/bat"
+#        dest: "~/.local/bin/bat"
+#        state: link
 
-    - name: Install bat (Ubuntu)
-      apt:
-        name: bat
-        state: present
-      when: ansible_os_family == 'Debian'
-
-    - name: Install bat (macOS)
-      homebrew:
-        name: bat
-      when: ansible_os_family == 'Darwin'
-
-    - name: Create symlink for bat
-      file:
-        src: "{{ ansible_playbook_dir }}/.local/bin/bat"
-        dest: "~/.local/bin/bat"
-        state: link
-
-    # Other tasks remain the same as in the previous playbook
-    # ...
-
-- name: Set default shell
-  hosts: localhost
-  tasks:
-    - name: Set default shell to zsh
-      shell: chsh -s /bin/zsh "{{ ansible_ssh_user }}"
+#- name: Set default shell
+#  hosts: localhost
+#  tasks:
+#    - name: Set default shell to zsh
+#      shell: chsh -s /bin/zsh "{{ ansible_ssh_user }}"
