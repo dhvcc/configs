@@ -28,5 +28,5 @@ jobs:
 
       - name: Test Ansible Playbook
         run: |
-          ansible-playbook playbook.yaml
+          sudo ansible-playbook playbook.yaml
 

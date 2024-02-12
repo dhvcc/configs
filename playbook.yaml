@@ -2,6 +2,7 @@
 - name: Install dependencies and configure environment
   hosts: localhost
   gather_facts: true
+  become: yes
   tasks:
     - name: Update apt cache (Ubuntu)
       apt:
