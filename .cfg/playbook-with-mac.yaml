@@ -53,26 +53,26 @@
         name: "{{ item }}"
       loop:
         - curl
-#        - wget
-#        - git
-#        - gcc
-#        - libffi
-#        - htop
-#        - xclip
-#        - make
-#        - vim
-#        - python
-#        - postgresql
-#        - sqlite
-#        - xz
-#        - readline
-#        - bzip2
-#        - cargo
-#        - bash
-#        - zsh
-#        - neofetch
-#        - unzip
-#        - ripgrep
+        - wget
+        - git
+        - gcc
+        - libffi
+        - htop
+        - xclip
+        - make
+        - vim
+        - python
+        - postgresql
+        - sqlite
+        - xz
+        - readline
+        - bzip2
+        - cargo
+        - bash
+        - zsh
+        - neofetch
+        - unzip
+        - ripgrep
       when: ansible_os_family == 'Darwin'
 
     - name: Install fd-find (Ubuntu)
