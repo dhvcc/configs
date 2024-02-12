@@ -1,17 +1,17 @@
 ---
 - name: Install dependencies and configure environment
   hosts: localhost
-  become: no
-  gather_facts: yes
+  become: false
+  gather_facts: true
   tasks:
     - name: Update apt cache (Ubuntu)
-      become: yes
+      become: true
       apt:
-        update_cache: yes
+        update_cache: true
       when: ansible_os_family == 'Debian'
 
     - name: Install essential packages (Ubuntu)
-      become: yes
+      become: true
       apt:
         name: "{{ item }}"
         state: present
@@ -43,16 +43,14 @@
       when: ansible_os_family == 'Debian'
 
     - name: Update Homebrew (macOS)
-      become: yes
+      become: true
       homebrew:
         state: latest
       when: ansible_os_family == 'Darwin'
 
     - name: Install essential packages (macOS)
-      #homebrew:
-      #  name: "{{ item }}"
-      ansible.builtin.command:
-        cmd: brew install "{{ item }}"
+      homebrew:
+        name: "{{ item }}"
       loop:
         - curl
 #        - wget
@@ -78,6 +76,7 @@
       when: ansible_os_family == 'Darwin'
 
     - name: Install fd-find (Ubuntu)
+      become: true
       apt:
         name: fd-find
         state: present
