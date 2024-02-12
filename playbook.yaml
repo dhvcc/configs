@@ -108,9 +108,9 @@
     # Other tasks remain the same as in the previous playbook
     # ...
 
-- name: Set default shell
-  hosts: localhost
-  tasks:
-    - name: Set default shell to zsh
-      shell: chsh -s /bin/zsh "{{ ansible_ssh_user }}"
+#- name: Set default shell
+#  hosts: localhost
+#  tasks:
+#    - name: Set default shell to zsh
+#      shell: chsh -s /bin/zsh "{{ ansible_ssh_user }}"
 
