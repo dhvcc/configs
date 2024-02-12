@@ -23,10 +23,10 @@ jobs:
 
       - name: Install Ansible
         run: |
-          sudo python -m pip install --upgrade pip
-          sudo pip install ansible
+          python -m pip install --upgrade pip
+          pip install ansible
 
       - name: Test Ansible Playbook
         run: |
-          sudo ansible-playbook .cfg/playbook-with-mac.yaml
+          ansible-playbook .cfg/playbook-with-mac.yaml
 
