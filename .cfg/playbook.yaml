@@ -1,13 +1,17 @@
 ---
 - name: Install dependencies and configure environment
   hosts: localhost
-  gather_facts: false
+  become: false
+  gather_facts: true
   tasks:
-    - name: Update apt cache
+    - name: Update apt cache (Ubuntu)
+      become: true
       apt:
-        update_cache: yes
+        update_cache: true
+      when: ansible_os_family == 'Debian'
 
-    - name: Install essential packages
+    - name: Install essential packages (Ubuntu)
+      become: true
       apt:
         name: "{{ item }}"
         state: present
@@ -30,78 +34,82 @@
         - lzma-dev
         - libreadline6-dev
         - libbz2-dev
-        - cargo
         - bash
         - zsh
         - neofetch
         - unzip
         - ripgrep
-
-    - name: Install additional packages
-      apt:
-        name: "{{ item }}"
-        state: present
-      loop:
-        - fd-find
         - bat
+        - fd-find
+      when: ansible_os_family == 'Debian'
 
-    - name: Install lsd
-      apt:
-        deb: "https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd-musl_1.0.0_amd64.deb"
-        state: present
+    - name: Update Homebrew (macOS)
+      become: true
+      homebrew:
+        state: latest
+      when: ansible_os_family == 'Darwin'
 
-    - name: Create symlinks for fd and bat
-      file:
-        src: "{{ item.src }}"
-        dest: "{{ item.dest }}"
-        state: link
+    - name: Install essential packages (macOS)
+      homebrew:
+        name: "{{ item }}"
       loop:
-        - { src: "{{ ansible_playbook_dir }}/.local/bin/fd", dest: "~/.local/bin/fd" }
-        - { src: "{{ ansible_playbook_dir }}/.local/bin/bat", dest: "~/.local/bin/bat" }
+        - curl
+        - wget
+        - git
+        - gcc
+        - libffi
+        - htop
+        - xclip
+        - make
+        - vim
+        - python
+        - postgresql
+        - sqlite
+        - xz
+        - readline
+        - bzip2
+        - bash
+        - zsh
+        - neofetch
+        - unzip
+        - ripgrep
+        - bat
+        - fd
+      when: ansible_os_family == 'Darwin'
 
-    - name: Install pyenv
-      shell: "curl https://pyenv.run | bash"
+    - name: Create symlink for fd
+      become: true
+      shell: ln -sf "$(which fdfind)" /usr/bin/fd
+      args:
+        creates: "/usr/bin/fd"
+      when: ansible_os_family == 'Debian'
 
-    - name: Install Node.js using fnm
-      shell: "curl -fsSL https://fnm.vercel.app/install | bash && /bin/zsh -i -c 'fnm install 16'"
+    - name: Create symlink for bat
+      become: true
+      shell: ln -sf "$(which batcat)" /usr/bin/bat
+      args:
+        creates: "/usr/bin/bat"
+      when: ansible_os_family == 'Debian'
 
-    - name: Install fzf
-      git:
-        repo: https://github.com/junegunn/fzf.git
-        dest: ~/.fzf
-        version: master
-      become: yes
+- hosts: localhost
+  name: Set up bash
+  tasks:
+    - name: Install Oh My Bash
+      shell: |
+        . ~/.bashrc
+        bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+      args:
+        executable: /bin/bash
 
-    - name: Run fzf install script
-      command: "~/.fzf/install --all"
-
-    - name: Install Neovim, omb, and oh-my-zsh
-      shell: "./.cfg/scripts/install-neovim.sh && ./.cfg/scripts/install-omb.sh && ./.cfg/scripts/install-omz.sh"
-
-    - name: Install Starship prompt
-      shell: "sh -c 'curl -fsSL https://starship.rs/install.sh | bash -s -- -f'"
-
-    - name: Install pipx and packages
-      pipx:
-        package: "{{ item }}"
-      loop:
-        - ansible
-        - git+https://github.com/politeauthority/docker-pretty-ps.git#egg=docker-pretty-ps
-        - ranger-fm
-        - poetry
-        - ipython
-      become: yes
-
-    - name: Copy configuration files
-      copy:
-        src: "{{ item }}"
-        dest: "~"
-      loop:
-        - .bashrc
-        - .zshrc
+    - name: Move backup files to .bashrc
+      shell: mv -f ~/.bashrc.omb* ~/.bashrc
+      args:
+        executable: /bin/bash
 
 - name: Set default shell
   hosts: localhost
+  vars:
+    the_user: "{{ ansible_user_id }}"
   tasks:
     - name: Set default shell to zsh
-      shell: chsh -s /bin/zsh "{{ ansible_ssh_user }}"
+      shell: chsh -s /bin/zsh "{{ the_user }}"

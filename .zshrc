@@ -51,9 +51,9 @@ eval "$(fnm env --use-on-cd --shell=zsh)"
 #############
 # Oh-my-zsh #
 export ZSH="$HOME/.oh-my-zsh"
-export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
+export ZSH_CUSTOM="$ZSH/custom"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#d1d1d1,bg=#525252"
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+fpath+="$ZSH_CUSTOM/plugins/zsh-completions/src"
 source $ZSH/oh-my-zsh.sh
 #            #
 #############
