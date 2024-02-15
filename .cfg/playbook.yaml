@@ -108,6 +108,7 @@
 
 - name: Set default shell
   hosts: localhost
+  become: yes
   vars:
     the_user: "{{ ansible_user_id }}"
   tasks:
