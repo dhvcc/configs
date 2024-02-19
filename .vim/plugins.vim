@@ -30,7 +30,3 @@ Plug 'airblade/vim-gitgutter'
 " FZF and Ctrl+P support
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
-if !empty(glob("~/.wakatime.cfg"))
-  Plug 'wakatime/vim-wakatime' " Time tracking
-endif
