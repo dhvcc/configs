@@ -11,7 +11,10 @@ npm i -g neovim
 #zsh -ic 'npm i -g neovim'
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 #zsh -ic 'curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-zsh -ic 'nvim --headless +PlugInstall +qa'
+
+nvim --headless +PlugInstall +qa
+#zsh -ic 'nvim --headless +PlugInstall +qa'
+
 #zsh -ic "nvim -c ':PlugInstall | :qall'"
 #nvim --headless +'PlugInstall' +qall
 #nvim --headless +'CocInstall' +qall # FIXME
