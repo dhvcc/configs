@@ -2,8 +2,7 @@
 
 . ~/.zshrc
 
-curl -sL -o /var/cache/apt/archives/nvim-linux64.deb  https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.de
-&& dpkg -i /var/cache/apt/archives/nvim-linux64.deb
+curl -sL -o /var/cache/apt/archives/nvim-linux64.deb  https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.deb && dpkg -i /var/cache/apt/archives/nvim-linux64.deb
 
 python -m venv ~/.vim/.venv
 #zsh -ic 'python -m venv ~/.vim/.venv'
