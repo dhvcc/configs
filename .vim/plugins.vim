@@ -4,6 +4,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
 Plug 'mechatroner/rainbow_csv'
 Plug 'editorconfig/editorconfig-vim' " editorconfig support
 Plug 'dhvcc/nord-mint-vim' " Theme
@@ -29,7 +30,3 @@ Plug 'airblade/vim-gitgutter'
 " FZF and Ctrl+P support
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
-if !empty(glob("~/.wakatime.cfg"))
-  Plug 'wakatime/vim-wakatime' " Time tracking
-endif
