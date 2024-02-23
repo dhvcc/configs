@@ -3,7 +3,7 @@ name: Ansible Playbook Test
 on:
   push:
     branches:
-      - playbook-wip
+      - playbook-wipTEST
 
 jobs:
   test:
