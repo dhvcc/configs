@@ -2,20 +2,20 @@
 
 set -e
 
-apt update
+sudo apt update
 
-apt install -y curl wget git gcc g++ libffi-dev
-apt install -y htop xclip make vim curl \
-#    python3-dev python3-pip python3-venv \
-#    libpq-dev libsqlite3-dev \
-#    lzma-dev libreadline6-dev libbz2-dev
-apt install -y bash zsh neofetch unzip ripgrep
+sudo apt install -y curl wget git gcc g++ libffi-dev
+sudo apt install -y htop xclip make vim curl \
+    python3-dev python3-pip python3-venv \
+    libpq-dev libsqlite3-dev \
+    lzma-dev libreadline6-dev libbz2-dev
+sudo apt install -y bash zsh neofetch unzip ripgrep
 curl https://sh.rustup.rs -sSf | bash -s -- -y --no-modify-path
 
 # Shell setup
 ~/.cfg/scripts/install-omb.sh
 ~/.cfg/scripts/install-omz.sh
-sh -c "$(curl -fsSL https://starship.rs/install.sh)" "" -f
+sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)" "" -f
 
 # CLI Utils
 pip install pipx && \
@@ -29,8 +29,8 @@ pip install pipx && \
 mkdir -p ~/.local/bin
 wget https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd-musl_1.0.0_amd64.deb && \
     dpkg -i lsd-musl_1.0.0_amd64.deb && rm lsd-musl_1.0.0_amd64.deb
-apt install -y fd-find && ln -s $(which fdfind) ~/.local/bin/fd
-apt install -y bat && ln -s $(which batcat) ~/.local/bin/bat
+sudo apt install -y fd-find && ln -s $(which fdfind) ~/.local/bin/fd
+sudo apt install -y bat && ln -s $(which batcat) ~/.local/bin/bat
 
 # ??? COPY ???
 
