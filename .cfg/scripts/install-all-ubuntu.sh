@@ -18,12 +18,12 @@ set -e
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" "" -f
 
 # CLI Utils
-pip install pipx && \
-    pipx install ansible --include-deps && \
-    pipx install git+https://github.com/politeauthority/docker-pretty-ps.git#egg=docker-pretty-ps && \
-    pipx install ranger-fm --include-deps && \
-    pipx install poetry --include-deps && \
-    pipx install ipython --include-deps
+#pip install pipx && \
+#    pipx install ansible --include-deps && \
+#    pipx install git+https://github.com/politeauthority/docker-pretty-ps.git#egg=docker-pretty-ps && \
+#    pipx install ranger-fm --include-deps && \
+#    pipx install poetry --include-deps && \
+#    pipx install ipython --include-deps
 
 # RUST-Based utils
 mkdir -p ~/.local/bin
