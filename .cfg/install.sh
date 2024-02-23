@@ -3,7 +3,7 @@
 
 cd "$HOME"
 
-alias cfg="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+alias cfg="/usr/bin/git --git-dir=$HOME/.cfg/ -b playbook-wip --work-tree=$HOME"
 mkdir -p "$HOME/.config-backup"
 git clone --bare https://github.com/dhvcc/configs.git $HOME/.cfg
 
