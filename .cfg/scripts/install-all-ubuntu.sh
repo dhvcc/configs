@@ -40,6 +40,7 @@ curl -fsSL https://fnm.vercel.app/install | bash && /bin/zsh -ic 'fnm install 16
 
 # NeoVIM
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --all
-#~/.cfg/scripts/install-neovim.sh
+~/.cfg/scripts/install-neovim.sh
 
 #zsh -ic "cfg checkout ~" >/dev/null 2>&1
+zsh
