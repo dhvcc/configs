@@ -13,4 +13,6 @@ map F <Plug>(easymotion-s2)
 source ~/.vimrc
 source ~/.vim/coc.vim
 
-colorscheme nord
+try
+  colorscheme nord
+endtry

@@ -47,7 +47,8 @@ function! s:show_documentation()
 endfunction
 
 " Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')  THAT DOESN'T
+" SEEM TO WORK
 
 " if hidden is not set, TextEdit might fail.
 set hidden
