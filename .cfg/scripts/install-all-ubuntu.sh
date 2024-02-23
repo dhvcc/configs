@@ -10,7 +10,7 @@ set -e
 #    libpq-dev libsqlite3-dev \
 #    lzma-dev libreadline6-dev libbz2-dev
 #apt install -y bash zsh neofetch unzip ripgrep
-curl https://sh.rustup.rs -sSf | bash -s -- -y --no-modify-path
+#curl https://sh.rustup.rs -sSf | bash -s -- -y --no-modify-path
 
 # Shell setup
 ~/.cfg/scripts/install-omb.sh
