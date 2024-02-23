@@ -16,7 +16,7 @@ RUN apt-get install -y cargo bash zsh neofetch unzip ripgrep
 RUN mkdir -p ~/.local/bin
 RUN wget https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd-musl_1.0.0_amd64.deb && \
     dpkg -i lsd-musl_1.0.0_amd64.deb && rm lsd-musl_1.0.0_amd64.deb
-RUN  apt-get install -y fd-find && ln -s $(which fdfind) ~/.local/bin/fd
+RUN apt-get install -y fd-find && ln -s $(which fdfind) ~/.local/bin/fd
 RUN apt-get install -y bat && ln -s $(which batcat) ~/.local/bin/bat
 
 COPY . .
