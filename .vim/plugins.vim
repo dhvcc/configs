@@ -5,7 +5,6 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 Plug 'mechatroner/rainbow_csv'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'editorconfig/editorconfig-vim' " editorconfig support
 Plug 'dhvcc/nord-mint-vim' " Theme
 Plug 'vim-scripts/ShowTrailingWhitespace' " Trailing whitespace highlight
@@ -13,7 +12,7 @@ Plug 'vim-airline/vim-airline' " Statusline
 " Character jumping
 Plug 'easymotion/vim-easymotion'
 " Language support
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Language server support
+Plug 'neoclide/coc.nvim', {'tag': 'v0.0.82'} " Language server support
 Plug 'ray-x/lsp_signature.nvim' " Function signature (and arguments) as you type
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 
