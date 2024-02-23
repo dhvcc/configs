@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
-
 sudo apt update
 
 sudo apt install -y curl wget git gcc g++ libffi-dev
@@ -28,9 +26,9 @@ pip install pipx && \
 # RUST-Based utils
 mkdir -p ~/.local/bin
 wget https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd-musl_1.0.0_amd64.deb && \
-    dpkg -i lsd-musl_1.0.0_amd64.deb && rm lsd-musl_1.0.0_amd64.deb
-sudo apt install -y fd-find && ln -s $(which fdfind) ~/.local/bin/fd
-sudo apt install -y bat && ln -s $(which batcat) ~/.local/bin/bat
+    sudo dpkg -i lsd-musl_1.0.0_amd64.deb && rm lsd-musl_1.0.0_amd64.deb
+sudo apt install -y fd-find && ln -sf $(which fdfind) ~/.local/bin/fd
+sudo apt install -y bat && ln -sf $(which batcat) ~/.local/bin/bat
 
 # ??? COPY ???
 
