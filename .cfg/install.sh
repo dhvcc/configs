@@ -5,7 +5,8 @@ cd "$HOME"
 
 alias cfg="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 mkdir -p "$HOME/.config-backup"
-cfg checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+mv ~/.bashrc ~/.config-backup/
+mv ~/.zshrc ~/.config-backup/
 
 git clone --single-branch --branch playbook-wip --bare https://github.com/dhvcc/configs.git $HOME/.cfg
 
