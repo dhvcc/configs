@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-#set -e
+set -e
 
-#apt update
+apt update
 
-#apt install -y curl wget git gcc g++ libffi-dev
-#apt install -y htop xclip make vim curl \
+apt install -y curl wget git gcc g++ libffi-dev
+apt install -y htop xclip make vim curl \
 #    python3-dev python3-pip python3-venv \
 #    libpq-dev libsqlite3-dev \
 #    lzma-dev libreadline6-dev libbz2-dev
-#apt install -y bash zsh neofetch unzip ripgrep
-#curl https://sh.rustup.rs -sSf | bash -s -- -y --no-modify-path
+apt install -y bash zsh neofetch unzip ripgrep
+curl https://sh.rustup.rs -sSf | bash -s -- -y --no-modify-path
 
 # Shell setup
 ~/.cfg/scripts/install-omb.sh
@@ -18,12 +18,12 @@
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" "" -f
 
 # CLI Utils
-#pip install pipx && \
-#    pipx install ansible --include-deps && \
-#    pipx install git+https://github.com/politeauthority/docker-pretty-ps.git#egg=docker-pretty-ps && \
-#    pipx install ranger-fm --include-deps && \
-#    pipx install poetry --include-deps && \
-#    pipx install ipython --include-deps
+pip install pipx && \
+    pipx install ansible --include-deps && \
+    pipx install git+https://github.com/politeauthority/docker-pretty-ps.git#egg=docker-pretty-ps && \
+    pipx install ranger-fm --include-deps && \
+    pipx install poetry --include-deps && \
+    pipx install ipython --include-deps
 
 # RUST-Based utils
 mkdir -p ~/.local/bin

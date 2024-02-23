@@ -1,5 +1,3 @@
-" TODO: fix comments
-
 " Escape with jk in insert mode
 inoremap jk <ESC>
 
