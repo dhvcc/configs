@@ -2,8 +2,11 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   fzf
+  brew
+  gh
 
   git
+  ssh-agent
   docker
   docker-compose
   ansible
@@ -30,6 +33,7 @@ path+=(
   $HOME/.cargo/bin
   $HOME/.local/share/gem/ruby/3.0.0/bin
   $HOME/.poetry/bin
+  /home/linuxbrew/.linuxbrew/bin
 )
 
 # Util configs
@@ -53,7 +57,7 @@ eval "$(fnm env --use-on-cd --shell=zsh)"
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#d1d1d1,bg=#525252"
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+fpath+="$ZSH_CUSTOM/plugins/zsh-completions/src"
 source $ZSH/oh-my-zsh.sh
 #            #
 #############
