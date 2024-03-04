@@ -34,6 +34,7 @@ path+=(
   $HOME/.local/share/gem/ruby/3.0.0/bin
   $HOME/.poetry/bin
   /home/linuxbrew/.linuxbrew/bin
+  /opt/homebrew/bin
 )
 
 # Util configs

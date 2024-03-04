@@ -10,7 +10,7 @@ export HISTSIZE=1000000
 export HISTFILESIZE=1000000
 export VISUAL=nvim
 export EDITOR=nvim
-export PATH="$HOME/.local/bin:$HOME/go:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/.poetry/bin:/home/linuxbrew/.linuxbrew/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/go:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/.poetry/bin:/home/linuxbrew/.linuxbrew/bin:/opt/homebrew/bin:$PATH"
 
 # Util configs
 export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden'
