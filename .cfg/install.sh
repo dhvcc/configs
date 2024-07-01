@@ -16,7 +16,11 @@ cfg "config" status.showUntrackedFiles no
 cfg "config" commit.verbose true
 
 if test -f "$(which apt)"; then
-  sudo apt install -y zsh
+  CMD=""
+  if [ "$(id -u)" != "0" ]; then
+    CMD="sudo"
+  fi
+  ${CMD} apt install -y zsh
 fi
 
 ./.cfg/scripts/install-brew.sh
