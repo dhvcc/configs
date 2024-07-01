@@ -15,18 +15,3 @@ cfg checkout
 cfg "config" status.showUntrackedFiles no
 cfg "config" commit.verbose true
 
-if test -f "$(which apt)"; then
-  CMD=""
-  if [ "$(id -u)" != "0" ]; then
-    CMD="sudo"
-  fi
-  ${CMD} apt install -y zsh
-fi
-
-./.cfg/scripts/install-brew.sh
-./.cfg/scripts/install-packages.sh
-
-./.cfg/scripts/install-omb.sh
-./.cfg/scripts/install-omz.sh
-
-./.cfg/scripts/install-neovim.sh
