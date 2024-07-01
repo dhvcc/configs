@@ -18,6 +18,7 @@ plugins=(
 
   node
   npm
+  nvm
 
   rust
 )
@@ -49,9 +50,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 path+=($PYENV_ROOT/bin)
 eval "$(pyenv init --path --no-rehash)"
 
-# fnm
-path+=($HOME/.local/share/fnm)
-eval "$(fnm env --use-on-cd --shell=zsh)"
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 #############
 # Oh-my-zsh #
