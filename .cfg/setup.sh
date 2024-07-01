@@ -11,6 +11,8 @@ fi
 ./.cfg/scripts/install-brew.sh
 ./.cfg/scripts/install-packages.sh
 
+nvm install 16
+
 ./.cfg/scripts/install-omb.sh
 ./.cfg/scripts/install-omz.sh
 
