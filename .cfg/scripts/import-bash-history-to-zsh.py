@@ -1,13 +1,14 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import pathlib
 import time
 
 
 def main():
     timestamp = None
-    with open("~/.bash_history", "rt") as bash_history:
-        with open("~/.zsh_history", "wt") as zsh_history:
+    with open(pathlib.Path.home() / ".bash_history", "rt") as bash_history:
+        with open(pathlib.Path.home() / ".zsh_history", "wt") as zsh_history:
             for line in bash_history.readlines():
                 line = line.rstrip('\n')
                 if line.startswith('#') and timestamp is None:
