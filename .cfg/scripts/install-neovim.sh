@@ -12,4 +12,8 @@ nvim --headless "+MasonInstall docker-compose-language-service" +qa
 nvim --headless "+MasonInstall pyright" +qa
 nvim --headless "+MasonInstall gopls" +qa
 nvim --headless "+MasonInstall typescript-language-server" +qa
+nvim --headless "+MasonInstall ansible-language-server" +qa
+nvim --headless "+MasonInstall bash-language-server" +qa
+nvim --headless "+MasonInstall lua-language-server" +qa
+nvim --headless "+MasonInstall nginx-language-server" +qa
 
