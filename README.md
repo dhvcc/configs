@@ -6,16 +6,23 @@ For GNOME desktop setup see [this repo](https://github.com/dhvcc/desktop).
 
 ![desktop](https://user-images.githubusercontent.com/18076967/186787936-8ff80282-5e4e-4643-b1cd-4f3ac0a6d140.png)
 
-## Install
+## Quick Install
 
-While installing, some files may conflict with the ones being pulled from this repo. Before retrying, remove `"$HOME"/.cfg` directory
+**Prerequisites are only `bash` / `curl` / `git` (macOS should have them installed by default, although git would need user input to install after prompt)**
+
+
+This will move every conflicting file from home into ~/.config-backup directory, so you can return to backup if needed
 
 ```shell
 curl -Lks https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh | /bin/sh
+exec bash
 ```
 
-You may want to add
-`0 0 * * * cfg pull --rebase` as a cron job (`crontab -e`)
+This will run the setup for all of the utils that you need to run this config
+
+```shell
+"$HOME/.cfg/setup.sh"
+```
 
 **Warning**, Bash configs may be outdated, use `zsh` as your default
 
@@ -26,6 +33,20 @@ You may want to add
 ### Neofetch
 - `neofetch` can be turned off with `NEOFETCH=0` (in something like `.config/.rc_extend.sh`)
 - you can override default neofetch settings with your own theme. Just add `export NEOFETCH_THEME=name_of_your_theme` to `.rc_extend.sh` and add your settings into `~/.config/neofetch/themes/name_of_your_theme.sh` file
+
+----------------
+
+# Sections below will be re-written because of the new installer
+
+----------------
+
+## TODO
+- Don't default editor to VIM
+- Fix aliases when command is not found (ls/vim)
+- Better extensibility support (redo .rc_extend.sh and friends)
+- Better docs
+- Revert config script
+- Helper command (something like cfg help?)
 
 ## Dependencies
 

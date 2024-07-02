@@ -25,7 +25,7 @@ alias ls="lsd -A --group-dirs first --color $color_lsd" \
 [ $(infocmp >/dev/null 2>&1) ] && alias ssh="kitty +kitten ssh"
 
 docker() {
-  if [[ $1 == "ps" && -n "$(command docker-pretty-ps)" ]]; then
+  if [[ $1 == "pps" && -n "$(command docker-pretty-ps)" ]]; then
     shift # remove the first "ps" argument from argv
     command docker-pretty-ps $@
   else
