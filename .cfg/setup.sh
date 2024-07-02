@@ -11,6 +11,8 @@ fi
 ./.cfg/scripts/install-brew.sh
 ./.cfg/scripts/install-packages.sh
 
+export PATH="$HOME/.local/bin:$PATH"
+
 pip3 install pipx
 pipx install poetry --include-deps
 pipx install ansible --include-deps
