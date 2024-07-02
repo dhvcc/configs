@@ -22,7 +22,7 @@ return {
         "ansiblels",
         "bashls",
         "lua_ls",
-        "nginx_language_server",
+        -- "nginx_language_server",
       },
     })
 

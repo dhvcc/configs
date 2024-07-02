@@ -32,8 +32,6 @@ path+=(
   $HOME/go
   $HOME/go/bin
   $HOME/.cargo/bin
-  $HOME/.local/share/gem/ruby/3.0.0/bin
-  $HOME/.poetry/bin
   /home/linuxbrew/.linuxbrew/bin
   /opt/homebrew/bin
 )

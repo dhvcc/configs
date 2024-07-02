@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-brew install unzip xclip vim neovim \
-  starship neofetch fzf btop wget \
-  pyenv nvm go \
+brew install unzip vim neovim \
+  starship neofetch fzf btop wget gh \
+  pyenv pipx nvm go \
   lsd fd ripgrep bat `# rust utils`
 
