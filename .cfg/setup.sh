@@ -8,10 +8,11 @@ if test -f "$(which apt)"; then
   ${CMD} apt install -y zsh
 fi
 
+export PATH="/home/linuxbrew/.linuxbrew/bin:/opt/homebrew/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
 ./.cfg/scripts/install-brew.sh
 ./.cfg/scripts/install-packages.sh
-
-export PATH="$HOME/.local/bin:$PATH"
 
 pip3 install pipx
 pipx install poetry --include-deps

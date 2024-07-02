@@ -3,39 +3,19 @@ FROM ubuntu:22.04
 WORKDIR /root
 
 # ubuntu only
-RUN apt update
-RUN apt install -y curl git build-essential
-
+RUN apt update --fix-missing
+RUN apt install -y curl git build-essential zsh
 
 # Install brew
-RUN curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | env NONINTERACTIVE=1 bash
+ENV NONINTERACTIVE=1
+RUN curl -Lks -o install.sh https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh && \
+    chmod +x install.sh && \
+    ./install.sh && \
+    zsh -c "$HOME/.cfg/setup.sh"
 
-RUN echo 'export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"' >> "$HOME/.bashrc"
-ENV PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+#RUN echo 'export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"' >> "$HOME/.bashrc"
+#ENV PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 
-RUN brew doctor
-
-# Xclip ubuntu only
-RUN brew install unzip xclip vim neovim
-
-RUN brew install starship neofetch fzf btop wget \
-      pyenv nvm \
-      lsd fd ripgrep bat `# rust utils`
-
-# INSTALL VIM THINGS
-RUN curl -fLo '~/.vim/autoload/plug.vim' --create-dirs \
-    'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-RUN curl -Lks https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh | /bin/sh
-
-# Install manually or in script
-#ENV NVM_DIR="$HOME/.nvm"
-#RUN test -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" && . "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"; nvm install 16
-
-# ubuntu only
-RUN apt install -y zsh
-#
-RUN "$HOME/.cfg/scripts/install-omb.sh"
-RUN "$HOME/.cfg/scripts/install-omz.sh"
+#RUN "$HOME/.cfg/setup.sh"
 
 CMD bash
