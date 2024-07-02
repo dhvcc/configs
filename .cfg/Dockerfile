@@ -8,11 +8,11 @@ RUN apt install -y curl git build-essential zsh
 
 # Install brew
 ENV NONINTERACTIVE=1
-ENV HOMEBREW_NO_AUTO_UPDATE=12
-RUN curl -Lks -o install.sh https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh && \
-    chmod +x install.sh && \
-    ./install.sh && \
-    zsh -c "$HOME/.cfg/setup.sh"
+ENV HOMEBREW_NO_AUTO_UPDATE=123
+#RUN curl -Lks -o install.sh https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh && \
+#    chmod +x install.sh && \
+#    ./install.sh && \
+#    zsh -c "$HOME/.cfg/setup.sh"
 
 #RUN echo 'export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"' >> "$HOME/.bashrc"
 #ENV PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"

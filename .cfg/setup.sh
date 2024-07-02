@@ -14,7 +14,7 @@ export PATH="$HOME/.local/bin:$PATH"
 ./.cfg/scripts/install-brew.sh
 ./.cfg/scripts/install-packages.sh
 
-pip3 install pipx
+brew install zsh
 pipx install poetry --include-deps
 pipx install ansible --include-deps
 pipx install git+https://github.com/politeauthority/docker-pretty-ps.git#egg=docker-pretty-ps
