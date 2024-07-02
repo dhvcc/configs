@@ -8,6 +8,7 @@ RUN apt install -y curl git build-essential zsh
 
 # Install brew
 ENV NONINTERACTIVE=1
+ENV HOMEBREW_NO_AUTO_UPDATE=1
 RUN curl -Lks -o install.sh https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh && \
     chmod +x install.sh && \
     ./install.sh && \
