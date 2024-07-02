@@ -14,11 +14,15 @@ return {
     mason.setup()
     mason_lspconfig.setup({
       ensure_installed = {
-        "dockerfile-language-server",
-        "docker-compose-language-service",
+        "dockerls",
+        "docker_compose_language_service",
         "pyright",
         "gopls",
-        "typescript-language-server",
+        "tsserver",
+        "ansiblels",
+        "bashls",
+        "lua_ls",
+        "nginx_language_server",
       },
     })
 
