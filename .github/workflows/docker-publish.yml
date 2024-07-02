@@ -7,9 +7,9 @@ name: Docker
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master-BLOCK" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master-BLOCK" ]
 
 env:
   # Use docker.io for Docker Hub if empty
