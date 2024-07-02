@@ -12,5 +12,5 @@ nvim --headless "+MasonInstall --force typescript-language-server" +qa
 nvim --headless "+MasonInstall --force ansible-language-server" +qa
 nvim --headless "+MasonInstall --force bash-language-server" +qa
 nvim --headless "+MasonInstall --force lua-language-server" +qa
-nvim --headless "+MasonInstall --force nginx-language-server" +qa
+# nvim --headless "+MasonInstall --force nginx-language-server" +qa
 
