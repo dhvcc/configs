@@ -8,6 +8,7 @@ mkdir -p "$HOME/.config-backup"
 git clone --no-checkout --bare https://github.com/dhvcc/configs.git $HOME/.cfg
 
 # Backup and remove repo files (if exist)
+cfg ls-tree -r master --name-only | xargs -I {} bash -c '$(dirname "$HOME"/.config-backup/{})'
 cfg ls-tree -r master --name-only | xargs -I {} mv {} ./.config-backup/{}
 
 cfg checkout
