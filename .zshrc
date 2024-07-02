@@ -39,7 +39,7 @@ path+=(
 )
 
 # Util configs
-export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden'
+export FZF_DEFAULT_COMMAND='rg --files --follow --respect-gitignore --hidden --glob "!**/.venv/**" --glob "!**/venv/**" --glob "!**/node_modules/**" '
 export BAT_THEME="Nord"
 
 # Starship prompt initialization
