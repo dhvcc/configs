@@ -1,5 +1,9 @@
 " TODO: fix comments
 
+:tnoremap <Esc> <C-\><C-n>
+:tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+
+
 " Escape with jk in insert mode
 inoremap jk <ESC>
 
