@@ -1,6 +1,10 @@
 #!/usr/bin/env zsh
 
-. ~/.zshrc
+export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#d1d1d1,bg=#525252"
+fpath+="$ZSH_CUSTOM/plugins/zsh-completions/src"
+source $ZSH/oh-my-zsh.sh
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc --unattended
 
