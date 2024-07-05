@@ -25,17 +25,20 @@ set listchars+=trail:◦
 """""""""""""""""
 " Splits & tabs "
 " Resize splits with Alt+J/K
-noremap <A-k> :vertical resize +5<CR>
-noremap <A-j> :vertical resize -5<CR>
+noremap <C-k> :vertical resize +5<CR>
+noremap <C-j> :vertical resize -5<CR>
 
 " Tabs like in chrome with vimium
-noremap <C-j> :tabprevious<CR>
-noremap <C-k> :tabnext<CR>
-noremap <C-t> :tabnew<CR>
+noremap <A-j> :tabprevious<CR>
+noremap <A-k> :tabnext<CR>
+noremap <A-t> :tabnew<CR>
+noremap <A-w> :tabclose<CR><CR>
+noremap <A-s> <ESC>:w<CR>
 
 " Move splits with Ctrl instead of Ctrl+W
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" TODO: fix this
+nnoremap <A-L> :wincmd l<CR>
+nnoremap <A-H> :wincmd h<CR>
 " Splits & tabs "
 """""""""""""""""
 
