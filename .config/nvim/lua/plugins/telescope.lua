@@ -21,10 +21,23 @@ return {
           '--glob=!node_modules',
           '--glob=!.vscode-server',
         },
+
       },
     },
     defaults = {
       prompt_prefix = '=> ',
+      mappings = {
+        n = {
+          ["cd"] = function(prompt_bufnr)
+            vim.notify("cd")
+            local selection = require("telescope.actions.state").get_selected_entry()
+            local dir = vim.fn.fnamemodify(selection.path, ":p:h")
+            require("telescope.actions").close(prompt_bufnr)
+            -- Depending on what you want put `cd`, `lcd`, `tcd`
+            vim.cmd(string.format("silent cd %s", dir))
+          end
+        }
+      },
     },
   },
   keys = {
@@ -33,8 +46,7 @@ return {
     { 'fs', function() require('telescope.builtin').live_grep() end, desc = 'Find String' },
     { 'fb', function() require('telescope.builtin').buffers() end, desc = 'Find Buffers' },
     { 'fh', function() require('telescope.builtin').help_tags() end, desc = 'Find Help' },
-
   },
-  -- TODO: map <C-S-F> to live_grep
-  -- Grep saerch ignore VCS
+  -- Grep and find files ignore VCS and do faf fas to do find all
 }
+

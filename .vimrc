@@ -59,22 +59,12 @@ endif
 " transparency + KiTTY "
 """"""""""""""""""""""""
 
-"""""""""""""""""
-" Plugin config "
-" EASYMOTION
-" f is single-char, F is double-char bidirectional motion search
-map f <Plug>(easymotion-s)
-map F <Plug>(easymotion-s2)
-" Plugin config "
-"""""""""""""""""
-
 """"""""""""
 " Vim plug "
 call plug#begin('~/.vim/plugged')
 Plug 'dhvcc/nord-mint-vim' " Theme
 Plug 'vim-airline/vim-airline' " Statusline
 " Character jumping
-Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim' " editorconfig support
 if !has("nvim")
   " NERDTree
@@ -94,6 +84,7 @@ if !has("nvim")
   " NerdTree "
   " Comment lines with Ctrl+/
   filetype plugin on
+
   nmap <C-_> <plug>NERDCommenterToggle
 
   " Ctrl+B toogle tree
