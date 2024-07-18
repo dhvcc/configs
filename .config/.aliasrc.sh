@@ -1,28 +1,19 @@
 alias cfg="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+alias vim=nvim
 
-if [ -n "$SSH_CLIENT" -a -n "$(command -v kitty)" ]; then
-  alias clip="kitty +kitten clipboard";
-elif [ -n "$WSL_DISTRO_NAME" ]; then
+if [ -n "$WSL_DISTRO_NAME" ]; then
   clip() { cat $1 | clip.exe; };
+elif [ "$(uname)" == "Darwin" ]; then
+  clip() { pbcopy < $1; };
 else
   alias clip="xclip -sel clip";
 fi
 
-# Mon2cam alias for linux
-alias mon2cam="deno run --unstable -A -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts"
-
-alias vim=nvim
 # Output dirs and sort by size
 dus() { du -sh $1/* | sort -hr | xargs -0 echo | sed -r 's/\S*\// /g'; }
 alias lss="lsd --blocks size,name -l -S --size=short -F" # dus lsd variant
 
-# FIXME color_lsd=$(ps -p $(ps -p $$ -o ppid=) -o args= | grep nautilus 2>&1 > /dev/null && echo -n "never" || echo -n "always")
-color_lsd="always"
-alias ls="lsd -A --group-dirs first --color $color_lsd" \
-      find="fd" \
-      grep="rg -i --color always"
-
-[ $(infocmp >/dev/null 2>&1) ] && alias ssh="kitty +kitten ssh"
+alias ls="lsd -A --group-dirs first --color always"
 
 docker() {
   if [[ $1 == "pps" && -n "$(command docker-pretty-ps)" ]]; then

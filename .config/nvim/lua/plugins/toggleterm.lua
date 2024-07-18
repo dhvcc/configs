@@ -4,7 +4,6 @@ return {
   config = function()
     require('toggleterm').setup {
       size = 20,
-      -- open_mapping = [[<S-t>]],
       hide_numbers = true,
       shade_filetypes = {},
       shade_terminals = true,
@@ -27,6 +26,7 @@ return {
   end,
   keys = {
     {'<S-t>', function() require('toggleterm').toggle() end, desc = 'Toggle Terminal'},
+    {'<leader>t', function() require('toggleterm').toggle() end, desc = 'Toggle Terminal'},
   },
 }
 

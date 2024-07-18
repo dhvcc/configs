@@ -6,7 +6,6 @@ plugins=(
   gh
 
   git
-  ssh-agent
   docker
   docker-compose
   ansible
@@ -83,6 +82,8 @@ clipp() {
 }
 #                        #
 ##########################
+
+/bin/find ~/.ssh -type f -not -name "*.pub" | xargs -I {} bash -c 'ssh-add {} 2>/dev/null'
 
 bindkey -e  # Disable VI mode
 [ ! "$NEOFETCH" = "0" ] && neofetch

@@ -63,4 +63,6 @@ if [ -f "$HOME/.config/.rc_extend.sh" ]; then source ~/.config/.rc_extend.sh; fi
 #                        #
 ##########################
 
+/bin/find ~/.ssh -type f -not -name "*.pub" | xargs -I {} bash -c 'ssh-add {} 2>/dev/null'
+
 [ ! "$NEOFETCH" = "0" ] && neofetch
