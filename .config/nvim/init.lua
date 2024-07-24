@@ -53,6 +53,6 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
 -- end
 
 -- Source some old maps and settings from regular vim
-vim.cmd("source ~/.vimrc")
-
+-- vim.cmd("source ~/.vimrc")
 require("config.lazy")
+require("config.vimrc-rewrite")
