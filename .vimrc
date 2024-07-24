@@ -59,14 +59,13 @@ endif
 " transparency + KiTTY "
 """"""""""""""""""""""""
 
-""""""""""""
-" Vim plug "
-call plug#begin('~/.vim/plugged')
-Plug 'dhvcc/nord-mint-vim' " Theme
-Plug 'vim-airline/vim-airline' " Statusline
-" Character jumping
-Plug 'editorconfig/editorconfig-vim' " editorconfig support
 if !has("nvim")
+  """"""""""""
+  " Vim plug "
+  call plug#begin('~/.vim/plugged')
+  Plug 'dhvcc/nord-mint-vim' " Theme
+  Plug 'editorconfig/editorconfig-vim' " editorconfig support
+  Plug 'vim-airline/vim-airline' " Statusline
   " NERDTree
   Plug 'preservim/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin' " Git status in NERDTree
@@ -76,8 +75,8 @@ if !has("nvim")
 
   " Git
   Plug 'airblade/vim-gitgutter'
+  call plug#end()
 endif
-call plug#end()
 
 if !has("nvim")
   """"""""""""
