@@ -2,6 +2,22 @@
  vim.keymap.set("n", "<Space>", "<Nop>", { silent = true, remap = false })
  vim.g.mapleader = " "
 
+vim.opt.scrolloff = 5
+vim.opt.relativenumber = true
+vim.opt.number = true
+
+vim.opt.smarttab = true
+vim.opt.cindent = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+
+vim.opt.list = true
+vim.opt.listchars = { trail = '◦' }
+
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = false })
+vim.api.nvim_set_keymap('i', 'jk', '<ESC>', { noremap = false })
+
 -- Additional keymaps
 -- IDE Fallbacks
 vim.api.nvim_set_keymap('n', '<C-_>', 'gcc', { desc = "Comment line"} )
@@ -54,5 +70,8 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
 
 -- Source some old maps and settings from regular vim
 -- vim.cmd("source ~/.vimrc")
+
+
 require("config.lazy")
-require("config.vimrc-rewrite")
+vim.cmd('colorscheme nord')
+pcall(require, "config.remaps")
