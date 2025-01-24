@@ -24,8 +24,8 @@ plugins=(
 
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000
-export VISUAL=nvim
-export EDITOR=nvim
+export VISUAL=lvim
+export EDITOR=lvim
 path+=(
   $HOME/.local/bin
   $HOME/go
@@ -50,6 +50,7 @@ eval "$(pyenv init --path --no-rehash)"
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 
 #############
 # Oh-my-zsh #
@@ -83,7 +84,8 @@ clipp() {
 #                        #
 ##########################
 
-/bin/find ~/.ssh -type f -not -name "*.pub" | xargs -I {} bash -c 'ssh-add {} 2>/dev/null'
+# /bin/find ~/.ssh -type f -not -name "*.pub" | xargs -I {} bash -c 'ssh-add {} 2>/dev/null'
+# /usr/bin/find ~/.ssh -type f -not -name "*.pub" | xargs -I {} bash -c 'ssh-add {} 2>/dev/null'
 
 bindkey -e  # Disable VI mode
 [ ! "$NEOFETCH" = "0" ] && neofetch
