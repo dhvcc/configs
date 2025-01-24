@@ -1,9 +1,9 @@
 alias cfg="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-alias vim=nvim
+alias vim=lvim
 
 if [ -n "$WSL_DISTRO_NAME" ]; then
   clip() { cat $1 | clip.exe; };
-elif [ "$(uname)" == "Darwin" ]; then
+elif [ "$(uname)" = "Darwin" ]; then
   clip() { pbcopy < $1; };
 else
   alias clip="xclip -sel clip";
@@ -12,7 +12,7 @@ fi
 # Output dirs and sort by size
 dus() { du -sh $1/* | sort -hr | xargs -0 echo | sed -r 's/\S*\// /g'; }
 alias lss="lsd --blocks size,name -l -S --size=short -F" # dus lsd variant
-
+alias rg="rg -S"
 alias ls="lsd -A --group-dirs first --color always"
 
 docker() {
