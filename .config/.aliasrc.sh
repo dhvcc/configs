@@ -14,6 +14,7 @@ dus() { du -sh $1/* | sort -hr | xargs -0 echo | sed -r 's/\S*\// /g'; }
 alias lss="lsd --blocks size,name -l -S --size=short -F" # dus lsd variant
 alias rg="rg -S"
 alias ls="lsd -A --group-dirs first --color always"
+alias lg="lazygit"
 
 docker() {
   if [[ $1 == "pps" && -n "$(command docker-pretty-ps)" ]]; then

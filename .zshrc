@@ -12,7 +12,6 @@ plugins=(
 
   python
   pip
-  pyenv
   poetry
 
   node
@@ -41,11 +40,6 @@ export BAT_THEME="Nord"
 
 # Starship prompt initialization
 eval "$(starship init zsh)"
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-path+=($PYENV_ROOT/bin)
-eval "$(pyenv init --path --no-rehash)"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
