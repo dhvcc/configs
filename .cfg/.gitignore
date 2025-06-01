@@ -1,5 +1,6 @@
 .config/Code
 .config/htop
+.config/btop
 .config/VSCodium
 .nvmrc
 **/nvim/lazy-lock.json
