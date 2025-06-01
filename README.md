@@ -1,3 +1,8 @@
+# README MAY NOT BE UP TO DATE ON CERTAIN PACKAGE INSTALLS, THEY DID CHANGE. ONLY THE QUICK INSTALL SECTION IS FOR SURE UP TO DATE
+
+# I PLAN TO REWRITE IT, MAY BE LATER
+
+
 # Configs
 
 Basic showcase (neofetch is customized in this picture, `mint` theme used)
