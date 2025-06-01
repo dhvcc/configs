@@ -17,8 +17,6 @@ export PATH="$HOME/.local/bin:$PATH"
 pipx install poetry --include-deps
 pipx install ansible --include-deps
 pipx install git+https://github.com/politeauthority/docker-pretty-ps.git#egg=docker-pretty-ps
-pipx install ranger-fm --include-deps
-pipx install ipython --include-deps
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
