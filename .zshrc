@@ -48,6 +48,7 @@ export NVM_DIR="$HOME/.nvm"
 
 #############
 # Oh-my-zsh #
+export DISABLE_UPDATE_PROMPT=true
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#d1d1d1,bg=#525252"
