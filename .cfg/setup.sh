@@ -23,7 +23,7 @@ export NVM_DIR="$HOME/.nvm"
 nvm install 16
 
 # Install rust
-curl https://sh.rustup.rs -sSf | sh
+curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 ./.cfg/scripts/install-omb.sh
 ./.cfg/scripts/install-omz.sh
