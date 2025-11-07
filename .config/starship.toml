@@ -4,9 +4,13 @@ $hostname\
 $directory\
 $git_branch \
 $git_status\
-$python
+$python\
+$time
 └❯ 
 """
+
+[time]
+disabled = false
 
 [username]
 show_always = true
