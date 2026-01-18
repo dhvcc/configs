@@ -14,13 +14,12 @@ export PATH="$HOME/.local/bin:$PATH"
 ./.cfg/scripts/install-brew.sh
 ./.cfg/scripts/install-packages.sh
 
-pipx install poetry --include-deps
-pipx install ansible --include-deps
-pipx install git+https://github.com/politeauthority/docker-pretty-ps.git#egg=docker-pretty-ps
+uv tool install poetry
+uv tool install ansible
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
-nvm install 16
+nvm install --lts
 
 # Install rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y

@@ -16,6 +16,8 @@ alias rg="rg -S"
 alias ls="lsd -A --group-dirs first --color always"
 alias lg="lazygit"
 
+alias gbn="git rev-parse --abbrev-ref HEAD"
+
 docker() {
   if [[ $1 == "pps" && -n "$(command docker-pretty-ps)" ]]; then
     shift # remove the first "ps" argument from argv
@@ -27,6 +29,7 @@ docker() {
 
 ##########
 # Python #
+alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 alias python="python3" \
       pip="pip3" \
       ipython="ipython3"
