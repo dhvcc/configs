@@ -1,23 +1,10 @@
-# README MAY NOT BE UP TO DATE
-
-CERTAIN PACKAGE INSTALLS DID CHANGE. ONLY THE QUICK INSTALL SECTION IS FOR SURE UP TO DATE
-
-# I PLAN TO REWRITE IT, MAY BE LATER
-
------------------
-
 # Configs
 
-Basic showcase (neofetch is customized in this picture, `mint` theme used)
-
-For GNOME desktop setup see [this repo](https://github.com/dhvcc/desktop).
-
-![desktop](https://user-images.githubusercontent.com/18076967/186787936-8ff80282-5e4e-4643-b1cd-4f3ac0a6d140.png)
+![desktop](https://github.com/user-attachments/assets/2516724b-2140-493f-8b81-6d1be886348f)
 
 ## Quick Install
 
 **Prerequisites are only `bash` / `curl` / `git` (macOS should have them installed by default, although git would need user input to install after prompt)**
-
 
 This will move every conflicting file from home into ~/.config-backup directory, so you can return to backup if needed
 
