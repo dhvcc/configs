@@ -1,22 +1,33 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 WORKDIR /root
-
-# ubuntu only
 RUN apt update --fix-missing
-RUN apt install -y curl git build-essential zsh
+RUN apt install -y curl git build-essential zsh sudo
+
+RUN useradd -m user
+RUN usermod -aG sudo user
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 # Install brew
 ENV NONINTERACTIVE=1
 ENV HOMEBREW_NO_AUTO_UPDATE=123
-#RUN curl -Lks -o install.sh https://raw.githubusercontent.com/dhvcc/configs/master/.cfg/install.sh && \
-#    chmod +x install.sh && \
-#    ./install.sh && \
-#    zsh -c "$HOME/.cfg/setup.sh"
 
-#RUN echo 'export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"' >> "$HOME/.bashrc"
-#ENV PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+WORKDIR /home/user
+USER user
 
-#RUN "$HOME/.cfg/setup.sh"
+RUN mkdir ./.cfg
+COPY .zshrc .bashrc ./
+COPY ./.config ./.config
+COPY ./.cfg ./.cfg
 
-CMD bash
+
+ENV PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
+ENV HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+ENV HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
+ENV HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"
+RUN echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "$HOME/.bashrc" && \
+    echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"' >> "$HOME/.zshenv"
+
+RUN bash -c 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && "$HOME/.cfg/setup.sh"'
+
+CMD zsh

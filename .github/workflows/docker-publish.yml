@@ -1,4 +1,4 @@
-name: Docker
+name: Publish docker image
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
@@ -7,9 +7,8 @@ name: Docker
 
 on:
   push:
-    branches: [ "master-BLOCK" ]
-  pull_request:
-    branches: [ "master-BLOCK" ]
+    tags:
+      - "v*"
 
 env:
   # Use docker.io for Docker Hub if empty
