@@ -14,12 +14,26 @@ export PATH="$HOME/.local/bin:$PATH"
 ./.cfg/scripts/install-brew.sh
 ./.cfg/scripts/install-packages.sh
 
+# Reload brew environment to ensure all installed binaries are in PATH
+if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+elif [ -f "/opt/homebrew/bin/brew" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 uv tool install poetry
 uv tool install ansible
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
-nvm install --lts
+if [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ]; then
+  \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
+  nvm install --lts
+elif [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
+  \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  nvm install --lts
+else
+  echo "Warning: nvm not found, skipping Node.js LTS installation"
+fi
 
 # Install rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y
