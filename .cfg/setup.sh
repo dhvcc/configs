@@ -26,3 +26,6 @@ curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 ./.cfg/scripts/install-omb.sh
 ./.cfg/scripts/install-omz.sh
+
+# Install LunarVim (requires neovim)
+./.cfg/scripts/install-lvim.sh
