@@ -2,7 +2,10 @@ FROM ubuntu:24.04
 
 WORKDIR /root
 RUN apt update --fix-missing
-RUN apt install -y curl git build-essential zsh sudo
+RUN apt install -y curl git build-essential zsh sudo \
+    htop xclip make \
+    python3-dev python3-pip python3-venv \
+    libpq-dev libsqlite3-dev
 
 RUN useradd -m user
 RUN usermod -aG sudo user
