@@ -32,4 +32,7 @@ RUN touch "$HOME/.zshenv" && \
 
 RUN bash -c 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && "$HOME/.cfg/setup.sh"'
 
+ENV LANG=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
+
 CMD ["zsh"]
