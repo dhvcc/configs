@@ -2,6 +2,10 @@
 
 # Install LunarVim
 # Requires neovim to be installed first
+
+# Ensure brew path is available
+export PATH="/home/linuxbrew/.linuxbrew/bin:/opt/homebrew/bin:$PATH"
+
 if ! command -v nvim &> /dev/null; then
   echo "Error: neovim is not installed. Please install neovim first."
   exit 1
