@@ -15,19 +15,18 @@ ENV HOMEBREW_NO_AUTO_UPDATE=123
 WORKDIR /home/user
 USER user
 
-RUN mkdir ./.cfg
-COPY .zshrc .bashrc ./
-COPY ./.config ./.config
-COPY ./.cfg ./.cfg
-
+COPY --chown=user:user .zshrc .bashrc ./
+COPY --chown=user:user ./.config ./.config
+COPY --chown=user:user ./.cfg ./.cfg
 
 ENV PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
 ENV HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
 ENV HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
 ENV HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"
-RUN echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "$HOME/.bashrc" && \
+RUN touch "$HOME/.zshenv" && \
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "$HOME/.bashrc" && \
     echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"' >> "$HOME/.zshenv"
 
 RUN bash -c 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && "$HOME/.cfg/setup.sh"'
 
-CMD zsh
+CMD ["zsh"]
