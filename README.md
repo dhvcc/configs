@@ -93,8 +93,8 @@ wget -qO- https://astral.sh/uv/install.sh | sh
 
 
 ```bash
-uv install poetry --include-deps
-uv install ansible --include-deps
+uv tool install poetry
+uv tool install ansible
 ```
 
 #### Cargo
