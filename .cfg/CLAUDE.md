@@ -76,6 +76,12 @@ docker build -f ./.cfg/Dockerfile -t dotfiles-test .
 docker run -it dotfiles-test
 ```
 
+The Dockerfile includes additional system packages for development:
+- Build tools: `build-essential`, `make`
+- Utilities: `htop`, `xclip`
+- Python development: `python3-dev`, `python3-pip`, `python3-venv`
+- Database libraries: `libpq-dev`, `libsqlite3-dev`
+
 ## Configuration Architecture
 
 ### Shell Configuration (.zshrc)
@@ -121,11 +127,14 @@ Custom prompt configuration showing:
 ### Homebrew Packages (scripts/install-packages.sh)
 
 Core utilities installed via Homebrew:
-- **Editors**: vim, neovim
-- **Shell tools**: starship, neofetch, fzf, btop, wget, gh, lazygit
+- **Editors**: vim, neovim, LunarVim (lvim)
+- **Shell tools**: starship, neofetch, fzf, btop, wget, gh, lazygit, unzip
 - **Development**: uv, nvm, go
 - **Container tools**: oxker (Docker monitoring), k9s (Kubernetes monitoring)
 - **Rust utilities**: lsd (ls), fd (find), ripgrep (grep), bat (cat)
+- **Fonts**: font-hack-nerd-font (for terminal icons)
+
+**Note**: The install script installs `unzip` first and reloads the brew environment before installing other packages to ensure font casks can be installed successfully.
 
 ### Python Tools (via uv)
 
@@ -143,7 +152,8 @@ Plugins installed in `~/.oh-my-zsh-custom/plugins/`:
 
 **Scripts directory** (`.cfg/scripts/`):
 - `install-brew.sh` - Homebrew installation
-- `install-packages.sh` - Homebrew package installation
+- `install-packages.sh` - Homebrew package installation (installs unzip first, then other packages)
+- `install-lvim.sh` - LunarVim installation (checks for neovim, gracefully skips if not found)
 - `install-omb.sh` - Oh-My-Bash setup
 - `install-omz.sh` - Oh-My-Zsh + plugins setup
 - `import-bash-history-to-zsh.py` - Migration utility
