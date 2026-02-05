@@ -40,10 +40,6 @@ lvim.plugins = {
           },
         },
       })
-
-      -- lvim.builtin.which_key.mappings["s"] = {
-      --   "<cmd>Outline<CR>", "Toggle outline",
-      -- }
     end
   },
   { -- Inline git blame
@@ -90,18 +86,6 @@ lvim.plugins = {
     end
   },
   -- THEMES --
-
-  -- FIXME: DOESNT WORK
-  {
-    "roobert/tailwindcss-colorizer-cmp.nvim",
-    -- optionally, override the default options:
-    config = function()
-      require("tailwindcss-colorizer-cmp").setup({
-        color_square_width = 2,
-      })
-    end
-  },
-  { "catgoose/vue-goto-definition.nvim" }, -- TODO: check why doesnt work
 }
 
 lvim.colorscheme = "vscode"
@@ -109,11 +93,10 @@ lvim.colorscheme = "vscode"
 lvim.builtin.nvimtree.on = true
 lvim.keys.normal_mode["<C-b>"] = ":NvimTreeToggle<CR>"
 
--- TODO: Investigate why this doesnt work
--- lvim.builtin.which_key.mappings["h"] = { "<C-w>h", "Move to split to the left" }
--- lvim.builtin.which_key.mappings["j"] = { "<C-w>h", "Move to split below" }
--- lvim.builtin.which_key.mappings["k"] = { "<C-w>h", "Move to split above" }
--- lvim.builtin.which_key.mappings["l"] = { "<C-w>h", "Move to split to the right" }
+lvim.builtin.which_key.mappings["h"] = { "<C-w>h", "Move to split to the left" }
+lvim.builtin.which_key.mappings["j"] = { "<C-w>j", "Move to split below" }
+lvim.builtin.which_key.mappings["k"] = { "<C-w>k", "Move to split above" }
+lvim.builtin.which_key.mappings["l"] = { "<C-w>l", "Move to split to the right" }
 
 lvim.keys.normal_mode["gt"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["gT"] = ":BufferLineCyclePrev<CR>"
@@ -131,16 +114,14 @@ lvim.builtin.which_key.mappings["o"] = {
   ":Outline<CR>", "Toggle outline",
 }
 
+lvim.builtin.which_key.mappings["y"] = {
+  '"+y', "Copy to system clipboard buffer",
+}
+lvim.builtin.which_key.mappings["p"] = {
+  '"+p', "Paste from system clipboard buffer",
+}
 
--- TODO: Find a good fucking way to do this
+lvim.lsp.buffer_mappings.visual_mode["f"] = {
+  [[y/\V<C-R>=escape(@", '/\')<CR><CR>]], "Search Selection"
+}
 
--- -- Skip the default Vue LSP (VLS)
--- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "vls" })
-
--- -- -- Manually configure Volar
--- local lspconfig = require("lspconfig")
-
--- lspconfig.vuels.setup({
---     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
---     -- You can add additional Volar settings here if needed
--- })
