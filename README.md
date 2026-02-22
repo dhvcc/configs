@@ -132,8 +132,8 @@ exec zsh
 
 ### Terminal
 
-- [Warp](https://github.com/warpdotdev/Warp)
+- [Ghostty](https://ghostty.org)
   ```bash
-  brew install --cask warp
+  brew install --cask ghostty
   ```
 
