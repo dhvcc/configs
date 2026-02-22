@@ -1,0 +1,11 @@
+theme = Monokai Pro Spectrum
+font-size = 17
+background = #000000
+background-opacity = 0.65
+background-opacity-cells = true
+background-blur = 20
+unfocused-split-opacity = 0.72
+unfocused-split-fill = #5a5a5a
+
+keybind = super+d=new_split:down
+keybind = super+shift+d=new_split:right
