@@ -1,0 +1,13 @@
+pager:
+  diff: diffnav
+theme:
+  colors:
+    text:
+      primary: "#E2E1ED"
+      secondary: "#666CA6"
+      inverted: "#242347"
+keybindings:
+  universal:
+    - key: g
+      name: lazygit
+      command: cd {{.RepoPath}} && lazygit
