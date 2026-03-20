@@ -17,6 +17,10 @@ alias ls="lsd -A --group-dirs first --color always"
 alias lg="lazygit"
 
 alias gbn="git rev-parse --abbrev-ref HEAD"
+alias cls="clear"
+alias dns-flush='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+alias ghd="gh dash"
+alias oc="opencode"
 
 docker() {
   if [[ $1 == "pps" && -n "$(command docker-pretty-ps)" ]]; then

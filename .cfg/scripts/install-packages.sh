@@ -12,9 +12,10 @@ fi
 
 # Install remaining packages
 brew install vim neovim \
-  starship neofetch fzf btop wget gh lazygit \
+  starship neofetch fzf btop wget \
   uv nvm go \
   oxker k9s \
   lsd fd ripgrep bat `# rust utils` \
+  gh delta diffnav lazygit \
   font-hack-nerd-font `# for terminal`
 
