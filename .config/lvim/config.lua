@@ -141,10 +141,13 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "gitcommit",
   callback = function()
-    vim.opt_local.spell = true
+    vim.opt_local.spell = false
     vim.opt_local.wrap = true
     vim.opt_local.textwidth = 72
     vim.opt_local.colorcolumn = "73"
+
+    vim.cmd([[syntax include @GitCommitDiff syntax/diff.vim]])
+    vim.cmd([[syntax region gitcommitDiff start=/^diff --git / end=/\%$/ contains=@GitCommitDiff keepend]])
   end,
 })
 --
