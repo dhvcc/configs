@@ -17,23 +17,6 @@ export PATH="$HOME/.local/bin:$HOME/go:$HOME/go/bin:$HOME/.cargo/bin:/home/linux
 export FZF_DEFAULT_COMMAND='rg --files --follow --respect-gitignore --hidden --glob "!**/.venv/**" --glob "!**/venv/**" --glob "!**/node_modules/**" '
 export BAT_THEME="Nord"
 
-# Helper functions
-poetry-shell() {
-  . "$(poetry env info --path)/bin/activate"
-}
-clipp() {
-  output="$(poetry env info)"
-  if [ $? -eq 0 ]; then
-    echo -n "$(poetry env info --path)/bin/python" | clip
-    echo "Copied poetry python path to clipboard"
-  else
-    echo $output
-  fi
-}
-
-# Starship prompt initialization
-eval "$(starship init bash)"
-
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
