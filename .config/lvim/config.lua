@@ -8,6 +8,10 @@ lvim.transparent_window = true
 vim.opt.relativenumber = true -- relative line numbers
 
 lvim.plugins = {
+    {
+    "lukas-reineke/indent-blankline.nvim",
+    enabled = false,
+  },
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
@@ -125,3 +129,22 @@ lvim.lsp.buffer_mappings.visual_mode["f"] = {
   [[y/\V<C-R>=escape(@", '/\')<CR><CR>]], "Search Selection"
 }
 
+-- Git Inline Diff inside Git Commit
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "COMMIT_EDITMSG", "MERGE_MSG", "TAG_EDITMSG" },
+  callback = function()
+    vim.bo.filetype = "gitcommit"
+    vim.cmd("setlocal syntax=gitcommit")
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "gitcommit",
+  callback = function()
+    vim.opt_local.spell = true
+    vim.opt_local.wrap = true
+    vim.opt_local.textwidth = 72
+    vim.opt_local.colorcolumn = "73"
+  end,
+})
+--

@@ -9,3 +9,7 @@ unfocused-split-fill = #5a5a5a
 
 keybind = super+d=new_split:down
 keybind = super+shift+d=new_split:right
+keybind = shift+arrow_left=ignore
+keybind = shift+arrow_right=ignore
+keybind = shift+arrow_up=ignore
+keybind = shift+arrow_down=ignore

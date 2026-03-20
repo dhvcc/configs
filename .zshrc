@@ -12,7 +12,6 @@ plugins=(
 
   python
   pip
-  poetry
 
   node
   npm
@@ -63,19 +62,6 @@ source ~/.config/.aliasrc.sh
 source ~/.config/.completionrc.sh
 if [ -f "$HOME/.config/.rc_extend.sh" ]; then source ~/.config/.rc_extend.sh; fi
 
-# Helper functions
-poetry-shell() {
-  . "$(poetry env info --path)/bin/activate"
-}
-clipp() {
-  output="$(poetry env info)"
-  if [ $? -eq 0 ]; then
-    echo -n "$(poetry env info --path)/bin/python" | clip
-    echo "Copied poetry python path to clipboard"
-  else
-    echo $output
-  fi
-}
 #                        #
 ##########################
 
