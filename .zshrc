@@ -20,8 +20,8 @@ plugins=(
   rust
 )
 
-export HISTSIZE=1000000
-export HISTFILESIZE=1000000
+export HISTSIZE=10000000
+export HISTFILESIZE=10000000
 export VISUAL=lvim
 export EDITOR=lvim
 path+=(
