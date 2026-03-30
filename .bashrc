@@ -1,52 +1,40 @@
+######################
+# Shared shell setup #
+######################
+[ -f "$HOME/.config/.shellrc.sh" ] && source "$HOME/.config/.shellrc.sh"
+
+
+########################
+# Oh My Bash plugins   #
+# Loaded through       #
+# Sheldon, not from a  #
+# manual checkout.     #
+########################
 plugins=(
   git
   ansible
-  pyenv
   npm
-  nvm
   brew
+  fzf
+  cargo
 )
 
-export HISTSIZE=10000000
-export HISTFILESIZE=10000000
-export VISUAL=nvim
-export EDITOR=nvim
-export PATH="$HOME/.local/bin:$HOME/go:$HOME/go/bin:$HOME/.cargo/bin:/home/linuxbrew/.linuxbrew/bin:/opt/homebrew/bin:$PATH"
+export SHELDON_BASH_CONFIG_FILE="$HOME/.config/sheldon/bash_plugins.toml"
+export SHELDON_BASH_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/sheldon-bash"
+export OSH="$SHELDON_BASH_DATA_DIR/repos/github.com/ohmybash/oh-my-bash"
+export DISABLE_AUTO_UPDATE=true
 
-# Util configs
-export FZF_DEFAULT_COMMAND='rg --files --follow --respect-gitignore --hidden --glob "!**/.venv/**" --glob "!**/venv/**" --glob "!**/node_modules/**" '
-export BAT_THEME="Nord"
+eval "$(SHELDON_CONFIG_FILE=$SHELDON_BASH_CONFIG_FILE SHELDON_DATA_DIR=$SHELDON_BASH_DATA_DIR sheldon source)"
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path --no-rehash)"
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
-
-# fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-##############
-# Oh-my-bash #
-if [[ -d $HOME/.oh-my-bash ]]; then
-  export OSH=$HOME/.oh-my-bash
-  source $OSH/oh-my-bash.sh
-fi
-#            #
-##############
-
-##########################
-# RC files and functions #
+#####################
+# Local extensions  #
+#####################
 source ~/.config/.aliasrc.sh
-source ~/.config/.completionrc.sh
 if [ -f "$HOME/.config/.rc_extend.sh" ]; then source ~/.config/.rc_extend.sh; fi
-#                        #
-##########################
 
-/bin/find ~/.ssh -type f -not -name "*.pub" | xargs -I {} bash -c 'ssh-add {} 2>/dev/null'
 
-[ ! "$NEOFETCH" = "0" ] && neofetch
-. "$HOME/.cargo/env"
+#############
+# Fastfetch  #
+#############
+[ ! "$NEOFETCH" = "0" ] && fastfetch

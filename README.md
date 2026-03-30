@@ -19,11 +19,15 @@ This will run the setup for all of the utils that you need to run this config
 "$HOME/.cfg/setup.sh"
 ```
 
-**Warning**, Bash configs may be outdated, use `zsh` as your default
+**Warning**, `zsh` is still the primary shell, but shell plugins are now managed through `sheldon`
 
 ## Configuration
 
 - Any additional rc stuff for your `.zshrc` you can add into `.config/.rc_extend.sh`
+- Shared shell env lives in `~/.config/.shellenv.sh`
+- Shared interactive shell init lives in `~/.config/.shellrc.sh`
+- Zsh plugins are managed in `~/.config/sheldon/plugins.toml`
+- Bash plugins are managed in `~/.config/sheldon/bash_plugins.toml`
 
 ### Neofetch
 - `neofetch` can be turned off with `NEOFETCH=0` (in something like `.config/.rc_extend.sh`)
@@ -64,9 +68,10 @@ Software
 - [btop](https://github.com/aristocratos/btop) (fancier htop)
 - [oxker](https://github.com/mrjackwills/oxker) (docker monitoring tool)
 - [k9s](https://github.com/derailed/k9s) (k8s monitoring tool)
+- [sheldon](https://github.com/rossmacarthur/sheldon) (shell plugin manager for `zsh` and `bash`)
 
 ```bash
-brew install font-hack-nerd-font fzf btop oxker
+brew install font-hack-nerd-font fzf btop oxker sheldon
 ```
 
 ### VIM / NEOVIM
@@ -111,21 +116,16 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
 ### Shell
 
-- [oh-my-bash](https://github.com/ohmybash/oh-my-bash) (install for consistency when you'll have to use bash, but use zsh as default)
-- [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) (`zsh` config framework)
-- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-- [zsh-completions](https://github.com/zsh-users/zsh-completions)
+- [sheldon](https://github.com/rossmacarthur/sheldon) (`zsh` and `bash` plugin manager)
+- zsh plugins are pulled by sheldon from [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) and [zsh-users](https://github.com/zsh-users)
+- bash plugins are pulled by sheldon from [oh-my-bash](https://github.com/ohmybash/oh-my-bash)
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
-mv -f .bashrc.omb* .bashrc
+sheldon lock --update
 
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc --unattended
-
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+SHELDON_CONFIG_FILE="$HOME/.config/sheldon/bash_plugins.toml" \
+SHELDON_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/sheldon-bash" \
+  sheldon lock --update
 
 exec zsh
 ```
@@ -136,4 +136,3 @@ exec zsh
   ```bash
   brew install --cask ghostty
   ```
-

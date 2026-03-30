@@ -6,6 +6,7 @@
 
 lvim.transparent_window = true
 vim.opt.relativenumber = true -- relative line numbers
+vim.keymap.set('i', 'jk', '<Esc>')
 
 vim.opt.clipboard = ""  -- Don't use system clipboard to not trash clipboard history
 -- Allow leader+y/p to use system clipboard
@@ -107,10 +108,10 @@ lvim.colorscheme = "vscode"
 
 lvim.builtin.nvimtree.on = true
 
-lvim.builtin.which_key.mappings["h"] = { "<C-w>h", "Move to split to the left" }
-lvim.builtin.which_key.mappings["j"] = { "<C-w>j", "Move to split below" }
-lvim.builtin.which_key.mappings["k"] = { "<C-w>k", "Move to split above" }
-lvim.builtin.which_key.mappings["l"] = { "<C-w>l", "Move to split to the right" }
+-- lvim.builtin.which_key.mappings["h"] = { "<C-w>h", "Move to split to the left" }
+-- lvim.builtin.which_key.mappings["j"] = { "<C-w>j", "Move to split below" }
+-- lvim.builtin.which_key.mappings["k"] = { "<C-w>k", "Move to split above" }
+-- lvim.builtin.which_key.mappings["l"] = { "<C-w>l", "Move to split to the right" }
 
 lvim.keys.normal_mode["gt"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["gT"] = ":BufferLineCyclePrev<CR>"
