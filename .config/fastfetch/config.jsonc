@@ -1,0 +1,18 @@
+{
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "kernel",
+    "uptime",
+    "shell",
+    {
+      "type": "command",
+      "text": "printf Aqua",
+      "key": "DE"
+    },
+    "wm",
+    "terminal",
+    "memory"
+  ]
+}

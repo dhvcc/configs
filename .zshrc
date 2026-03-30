@@ -15,7 +15,7 @@ plugins=(
 
   node
   npm
-  nvm
+  fnm
 
   rust
 )
@@ -40,10 +40,9 @@ export BAT_THEME="Nord"
 # Starship prompt initialization
 eval "$(starship init zsh)"
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+# fnm
+eval "$(fnm env --use-on-cd --shell zsh)"
+
 
 #############
 # Oh-my-zsh #
@@ -59,15 +58,10 @@ source $ZSH/oh-my-zsh.sh
 ##########################
 # RC files and functions #
 source ~/.config/.aliasrc.sh
-source ~/.config/.completionrc.sh
 if [ -f "$HOME/.config/.rc_extend.sh" ]; then source ~/.config/.rc_extend.sh; fi
 
 #                        #
 ##########################
 
-# /bin/find ~/.ssh -type f -not -name "*.pub" | xargs -I {} bash -c 'ssh-add {} 2>/dev/null'
-# /usr/bin/find ~/.ssh -type f -not -name "*.pub" | xargs -I {} bash -c 'ssh-add {} 2>/dev/null'
-
-bindkey -e  # Disable VI mode
-[ ! "$NEOFETCH" = "0" ] && neofetch
+[ ! "$NEOFETCH" = "0" ] && fastfetch 
 

@@ -12,8 +12,8 @@ fi
 
 # Install remaining packages
 brew install vim neovim \
-  starship neofetch fzf btop wget \
-  uv nvm go \
+  starship fastfetch fzf btop wget \
+  uv fnm go \
   oxker k9s \
   lsd fd ripgrep bat `# rust utils` \
   gh delta diffnav lazygit \
