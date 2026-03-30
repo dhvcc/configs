@@ -7,6 +7,17 @@
 lvim.transparent_window = true
 vim.opt.relativenumber = true -- relative line numbers
 
+vim.opt.clipboard = ""  -- Don't use system clipboard to not trash clipboard history
+-- Allow leader+y/p to use system clipboard
+lvim.builtin.which_key.mappings["y"] = {
+  '"+y', "Copy to system clipboard buffer",
+}
+lvim.builtin.which_key.mappings["p"] = {
+  '"+p', "Paste from system clipboard buffer",
+}
+lvim.keys.visual_mode["<leader>y"] = '"+y'
+lvim.keys.visual_mode["<leader>p"] = '"+p'
+
 lvim.plugins = {
     {
     "lukas-reineke/indent-blankline.nvim",
@@ -95,7 +106,6 @@ lvim.plugins = {
 lvim.colorscheme = "vscode"
 
 lvim.builtin.nvimtree.on = true
-lvim.keys.normal_mode["<C-b>"] = ":NvimTreeToggle<CR>"
 
 lvim.builtin.which_key.mappings["h"] = { "<C-w>h", "Move to split to the left" }
 lvim.builtin.which_key.mappings["j"] = { "<C-w>j", "Move to split below" }
@@ -108,7 +118,10 @@ lvim.keys.normal_mode["gT"] = ":BufferLineCyclePrev<CR>"
 lvim.builtin.terminal.direction = 'horizontal'
 lvim.keys.term_mode["<Esc>"] = "<C-\\><C-n>" -- Allow ESC to go into visual mode in terminal
 
-lvim.builtin.which_key.mappings["t"] = {
+lvim.builtin.which_key.mappings["b"] = {
+  ":NvimTreeToggle<CR>", "Toggle Sidebar"
+}
+lvim.builtin.which_key.mappings["j"] = {
   ":ToggleTerm<CR>", "Toggle terminal"
 }
 lvim.builtin.which_key.mappings["P"] = {
@@ -116,13 +129,6 @@ lvim.builtin.which_key.mappings["P"] = {
 }
 lvim.builtin.which_key.mappings["o"] = {
   ":Outline<CR>", "Toggle outline",
-}
-
-lvim.builtin.which_key.mappings["y"] = {
-  '"+y', "Copy to system clipboard buffer",
-}
-lvim.builtin.which_key.mappings["p"] = {
-  '"+p', "Paste from system clipboard buffer",
 }
 
 lvim.lsp.buffer_mappings.visual_mode["f"] = {
