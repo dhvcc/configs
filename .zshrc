@@ -94,3 +94,4 @@ if [ -f "$HOME/.config/.rc_extend.sh" ]; then source ~/.config/.rc_extend.sh; fi
 # Fastfetch  #
 #############
 [ ! "$NEOFETCH" = "0" ] && fastfetch
+

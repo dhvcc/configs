@@ -93,25 +93,24 @@ lvim.plugins = {
   },
 
   -- THEMES --
-  { 'tomasiser/vim-code-dark' },
   { 'Mofiqul/vscode.nvim' },
   {
-    'navarasu/onedark.nvim',
+    'projekt0n/github-nvim-theme',
+    name = 'github-theme',
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      require('onedark').setup({ style = 'warmer' })
-    end
-  },
+      require('github-theme').setup({})
+
+      vim.cmd('colorscheme github_dark')
+    end,
+  }
   -- THEMES --
 }
 
 lvim.colorscheme = "vscode"
 
 lvim.builtin.nvimtree.on = true
-
--- lvim.builtin.which_key.mappings["h"] = { "<C-w>h", "Move to split to the left" }
--- lvim.builtin.which_key.mappings["j"] = { "<C-w>j", "Move to split below" }
--- lvim.builtin.which_key.mappings["k"] = { "<C-w>k", "Move to split above" }
--- lvim.builtin.which_key.mappings["l"] = { "<C-w>l", "Move to split to the right" }
 
 lvim.keys.normal_mode["gt"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["gT"] = ":BufferLineCyclePrev<CR>"

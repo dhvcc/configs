@@ -24,22 +24,13 @@ fi
 uv tool install poetry
 uv tool install ansible
 
-export NVM_DIR="$HOME/.nvm"
-if [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ]; then
-  \. "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
-  nvm install --lts
-elif [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
-  \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  nvm install --lts
-else
-  echo "Warning: nvm not found, skipping Node.js LTS installation"
-fi
+fnm install --lts --use --corepack-enabled
+fnm default "$(fnm current)"
 
 # Install rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 
-./.cfg/scripts/install-omb.sh
-./.cfg/scripts/install-omz.sh
+./.cfg/scripts/install-sheldon.sh
 
 # Install LunarVim (requires neovim)
 ./.cfg/scripts/install-lvim.sh

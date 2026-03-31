@@ -26,7 +26,6 @@ export DISABLE_AUTO_UPDATE=true
 
 eval "$(SHELDON_CONFIG_FILE=$SHELDON_BASH_CONFIG_FILE SHELDON_DATA_DIR=$SHELDON_BASH_DATA_DIR sheldon source)"
 
-
 #####################
 # Local extensions  #
 #####################

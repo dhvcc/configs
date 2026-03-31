@@ -18,7 +18,7 @@ ENV HOMEBREW_NO_AUTO_UPDATE=123
 WORKDIR /home/user
 USER user
 
-COPY --chown=user:user .zshrc .bashrc ./
+COPY --chown=user:user .zshrc .bashrc .zprofile .bash_profile .profile ./
 COPY --chown=user:user ./.config ./.config
 COPY --chown=user:user ./.cfg ./.cfg
 

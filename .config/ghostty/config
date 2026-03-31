@@ -1,6 +1,5 @@
-theme = Monokai Pro Spectrum
+theme = GitHub Dark High Contrast
 font-size = 17
-background = #000000
 background-opacity = 0.65
 background-opacity-cells = true
 background-blur = 20
@@ -11,3 +10,6 @@ keybind = shift+arrow_left=ignore
 keybind = shift+arrow_right=ignore
 keybind = shift+arrow_up=ignore
 keybind = shift+arrow_down=ignore
+
+# Custom tweaks to theme
+background = #000000

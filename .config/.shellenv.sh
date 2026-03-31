@@ -48,4 +48,5 @@ export PATH
 # Tool settings #
 #################
 export FZF_DEFAULT_COMMAND='rg --files --follow --respect-gitignore --hidden --glob "!**/.venv/**" --glob "!**/venv/**" --glob "!**/node_modules/**" '
-export BAT_THEME="Nord"
+export BAT_THEME="Visual Studio Dark+"
+
