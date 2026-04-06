@@ -5,6 +5,9 @@ map("i", "jk", "<Esc>", { desc = "Exit insert mode" })
 map("n", "gt", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "gT", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
 
+map("n", "<leader>w", "<cmd>write<cr>", { desc = "Save file" })
+map("n", "<leader>q", "<cmd>quit<cr>", { desc = "Quit" })
+
 map("n", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
 map("x", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
 map("n", "<leader>p", '"+p', { desc = "Paste from system clipboard" })
