@@ -23,8 +23,8 @@ prepend_path() {
 ##################
 export HISTSIZE=10000000
 export HISTFILESIZE=10000000
-export VISUAL=lvim
-export EDITOR=lvim
+export VISUAL=nvim
+export EDITOR=nvim
 
 
 #############
@@ -50,3 +50,8 @@ export PATH
 export FZF_DEFAULT_COMMAND='rg --files --follow --respect-gitignore --hidden --glob "!**/.venv/**" --glob "!**/venv/**" --glob "!**/node_modules/**" '
 export BAT_THEME="Visual Studio Dark+"
 
+
+#####################
+# Local extensions  #
+#####################
+if [ -f "$HOME/.config/.rc_extend.sh" ]; then . "$HOME/.config/.rc_extend.sh"; fi

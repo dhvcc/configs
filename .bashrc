@@ -30,7 +30,6 @@ eval "$(SHELDON_CONFIG_FILE=$SHELDON_BASH_CONFIG_FILE SHELDON_DATA_DIR=$SHELDON_
 # Local extensions  #
 #####################
 source ~/.config/.aliasrc.sh
-if [ -f "$HOME/.config/.rc_extend.sh" ]; then source ~/.config/.rc_extend.sh; fi
 
 
 #############

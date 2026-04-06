@@ -77,6 +77,14 @@ do
 done
 
 
+#################
+# zsh-vi-mode    #
+#################
+zvm_config() {
+  ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+}
+
+
 ###################
 # Sheldon plugins #
 ###################
@@ -87,11 +95,9 @@ eval "$(sheldon source)"
 # Local extensions  #
 #####################
 source ~/.config/.aliasrc.sh
-if [ -f "$HOME/.config/.rc_extend.sh" ]; then source ~/.config/.rc_extend.sh; fi
 
 
 #############
 # Fastfetch  #
 #############
 [ ! "$NEOFETCH" = "0" ] && fastfetch
-
