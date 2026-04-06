@@ -1,12 +1,12 @@
 alias cfg="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-alias vim=lvim
+alias vim=nvim
 
 if [ -n "$WSL_DISTRO_NAME" ]; then
-  clip() { cat $1 | clip.exe; };
+  clip() { cat $1 | clip.exe; }
 elif [ "$(uname)" = "Darwin" ]; then
-  clip() { pbcopy < $1; };
+  clip() { pbcopy <$1; }
 else
-  alias clip="xclip -sel clip";
+  alias clip="xclip -sel clip"
 fi
 
 # Output dirs and sort by size
@@ -34,10 +34,10 @@ docker() {
 # Python #
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 alias python="python3" \
-      pip="pip3" \
-      ipython="ipython3"
+  pip="pip3" \
+  ipython="ipython3"
 # Django
 alias shellp="./manage.py shell_plus --ipython" \
-      runp="./manage.py runserver_plus"
+  runp="./manage.py runserver_plus"
 #        #
 ##########
