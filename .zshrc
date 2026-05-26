@@ -84,6 +84,10 @@ zvm_config() {
   ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 }
 
+function zvm_after_init() {
+  bindkey '^R' fzf-history-widget
+}
+
 
 ###################
 # Sheldon plugins #
@@ -101,3 +105,5 @@ source ~/.config/.aliasrc.sh
 # Fastfetch  #
 #############
 [ ! "$NEOFETCH" = "0" ] && fastfetch
+
+eval "$(mise activate zsh)"

@@ -13,3 +13,5 @@ keybind = shift+arrow_down=ignore
 
 # Custom tweaks to theme
 background = #000000
+
+term = xterm-256color
