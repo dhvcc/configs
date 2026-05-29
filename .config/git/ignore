@@ -154,3 +154,5 @@ __MACOSX/
 *.dmg
 *.pkg
 *.bz2
+
+.mise.toml
