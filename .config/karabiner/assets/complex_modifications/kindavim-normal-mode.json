@@ -1,0 +1,111 @@
+{
+    "title": "kindaVim Normal Mode helpers",
+    "rules": [
+        {
+            "description": "kindaVim Normal Mode: map o/O to line open sequences",
+            "manipulators": [
+                {
+                    "conditions": [
+                        {
+                            "name": "kVnnoremap",
+                            "type": "variable_if",
+                            "value": true
+                        }
+                    ],
+                    "from": {
+                        "key_code": "escape"
+                    },
+                    "to": [
+                        {
+                            "key_code": "i"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "kVnnoremap",
+                            "type": "variable_if",
+                            "value": true
+                        }
+                    ],
+                    "from": {
+                        "key_code": "return_or_enter"
+                    },
+                    "to": [
+                        {
+                            "key_code": "i"
+                        },
+                        {
+                            "key_code": "return_or_enter"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "kVnnoremap",
+                            "type": "variable_if",
+                            "value": true
+                        }
+                    ],
+                    "from": {
+                        "key_code": "o",
+                        "modifiers": {
+                            "mandatory": [
+                                "shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "i",
+                            "modifiers": [
+                                "shift"
+                            ]
+                        },
+                        {
+                            "key_code": "return_or_enter",
+                            "modifiers": [
+                                "shift"
+                            ]
+                        },
+                        {
+                            "key_code": "up_arrow"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "kVnnoremap",
+                            "type": "variable_if",
+                            "value": true
+                        }
+                    ],
+                    "from": {
+                        "key_code": "o"
+                    },
+                    "to": [
+                        {
+                            "key_code": "a",
+                            "modifiers": [
+                                "shift"
+                            ]
+                        },
+                        {
+                            "key_code": "return_or_enter",
+                            "modifiers": [
+                                "shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        }
+    ]
+}

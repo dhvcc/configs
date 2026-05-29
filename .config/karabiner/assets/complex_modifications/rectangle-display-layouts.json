@@ -1,0 +1,76 @@
+{
+    "title": "Rectangle display layouts",
+    "rules": [
+        {
+            "description": "Hyper + Plus = External, Hyper + Minus = No display",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "equal_sign",
+                        "modifiers": {
+                            "mandatory": [
+                                "control",
+                                "option",
+                                "command",
+                                "shift"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "/bin/sh -c '/usr/bin/open -g \"rectangle-pro://execute-layout?name=External\"; /bin/sleep 0.35; /usr/bin/open -g \"rectangle-pro://execute-layout?name=External\"'"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "hyphen",
+                        "modifiers": {
+                            "mandatory": [
+                                "control",
+                                "option",
+                                "command",
+                                "shift"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "/bin/sh -c '/usr/bin/open -g \"rectangle-pro://execute-layout?name=No%20display\"; /bin/sleep 0.35; /usr/bin/open -g \"rectangle-pro://execute-layout?name=No%20display\"'"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "keypad_plus",
+                        "modifiers": {
+                            "mandatory": [
+                                "control",
+                                "option",
+                                "command",
+                                "shift"
+                            ],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "/bin/sh -c '/usr/bin/open -g \"rectangle-pro://execute-layout?name=External\"; /bin/sleep 0.35; /usr/bin/open -g \"rectangle-pro://execute-layout?name=External\"'"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        }
+    ]
+}
