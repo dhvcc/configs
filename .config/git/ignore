@@ -156,3 +156,5 @@ __MACOSX/
 *.bz2
 
 .mise.toml
+.mise.local.toml
+playwright-report
